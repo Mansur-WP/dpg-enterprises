@@ -1,9 +1,8 @@
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowRight, ArrowDown, Leaf, Zap, Shield, BarChart3, BatteryCharging, Cpu } from "lucide-react";
-import showroomImg from "@assets/image_1780425029747.png";
+import { ArrowRight, Leaf, Zap, Shield, BarChart3, BatteryCharging, Cpu } from "lucide-react";
 import urbanXImg from "@assets/image_1780425003258.png";
+import showroomImg from "@assets/image_1780425029747.png";
 import eRiderImg from "@assets/image_1780425006540.png";
 import cityVoltImg from "@assets/image_1780425010140.png";
 import smartCruiserImg from "@assets/image_1780425014398.png";
@@ -54,82 +53,119 @@ const reasons = [
 ];
 
 export default function Home() {
-  const heroRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
-  const heroScale = useTransform(scrollYProgress, [0, 1], [1, 1.08]);
-  const heroOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
-
   return (
     <div className="bg-white text-neutral-950 overflow-x-hidden">
 
-      {/* ─── HERO: full-bleed ─── */}
-      <section ref={heroRef} className="relative h-screen w-full overflow-hidden">
-        {/* Background image with parallax */}
-        <motion.div style={{ scale: heroScale }} className="absolute inset-0 will-change-transform">
+      {/* ─── HERO ─── */}
+      <section className="relative min-h-screen w-full overflow-hidden flex items-center"
+        style={{ background: "linear-gradient(135deg, #04071a 0%, #08142e 40%, #061520 100%)" }}
+      >
+        {/* Ambient blue glow */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse 55% 65% at 72% 50%, rgba(26,58,143,0.22) 0%, transparent 70%)",
+          }}
+        />
+
+        {/* Product image — right side, masked edges to blend seamlessly */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+          className="absolute right-0 top-0 bottom-0 w-full lg:w-[58%] flex items-center justify-center"
+        >
           <img
-            src={showroomImg}
-            alt="MUNNASP Showroom"
-            className="w-full h-full object-cover object-center"
+            src={urbanXImg}
+            alt="MUNNASP Urban X"
+            className="w-full max-w-[660px] h-auto object-contain"
+            style={{
+              maskImage:
+                "radial-gradient(ellipse 82% 80% at 52% 52%, black 35%, rgba(0,0,0,0.9) 50%, rgba(0,0,0,0.5) 65%, transparent 80%)",
+              WebkitMaskImage:
+                "radial-gradient(ellipse 82% 80% at 52% 52%, black 35%, rgba(0,0,0,0.9) 50%, rgba(0,0,0,0.5) 65%, transparent 80%)",
+            }}
           />
         </motion.div>
 
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/55 to-black/30" />
-
-        {/* Content */}
-        <div className="absolute inset-0 flex flex-col justify-end pb-20 px-8 md:px-16 lg:px-24 max-w-7xl mx-auto">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.7 }}
-            className="text-white/60 text-sm font-medium tracking-[0.2em] uppercase mb-4"
-          >
-            Nigeria's Electric Mobility Leader
-          </motion.p>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.35, duration: 0.8 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-[0.95] tracking-tight mb-8 max-w-3xl"
-          >
-            Driving Nigeria's Electric Future
-          </motion.h1>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.55, duration: 0.7 }}
-            className="flex flex-wrap items-center gap-4"
-          >
-            <Link
-              href="/products"
-              data-testid="button-hero-explore"
-              className="inline-flex items-center gap-2 bg-white text-neutral-950 font-semibold text-sm px-7 py-3.5 rounded-full hover:bg-white/90 transition-all group"
+        {/* Left text content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-8 md:px-16 lg:px-24 w-full py-32">
+          <div className="max-w-lg">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.15, duration: 0.7 }}
+              className="inline-flex items-center gap-2 mb-6"
             >
-              Explore Models
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-            </Link>
-            <Link
-              href="/contact"
-              data-testid="button-hero-contact"
-              className="inline-flex items-center gap-2 border border-white/40 text-white font-semibold text-sm px-7 py-3.5 rounded-full hover:border-white/70 hover:bg-white/10 transition-all"
+              <span className="w-6 h-px bg-[#3aaa35]" />
+              <span className="text-[#3aaa35] text-xs font-bold tracking-[0.22em] uppercase">
+                Nigeria's Electric Mobility Leader
+              </span>
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.28, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.0] tracking-tight mb-6"
             >
-              Contact Us
-            </Link>
-          </motion.div>
+              Driving<br />
+              Nigeria's<br />
+              <span style={{ color: "#3aaa35" }}>Electric</span> Future
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.42, duration: 0.7 }}
+              className="text-white/55 text-base leading-relaxed mb-10 max-w-sm"
+            >
+              Premium electric scooters and smart mobility built for the next generation of Nigerian transportation.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.55, duration: 0.7 }}
+              className="flex flex-wrap gap-3"
+            >
+              <Link
+                href="/products"
+                data-testid="button-hero-explore"
+                className="inline-flex items-center gap-2 bg-white text-neutral-950 font-semibold text-sm px-7 py-3.5 rounded-full hover:bg-white/90 transition-all group"
+              >
+                Explore Models
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+              </Link>
+              <Link
+                href="/contact"
+                data-testid="button-hero-contact"
+                className="inline-flex items-center gap-2 border border-white/20 text-white/80 font-semibold text-sm px-7 py-3.5 rounded-full hover:border-white/50 hover:text-white transition-all"
+              >
+                Get a Quote
+              </Link>
+            </motion.div>
+
+            {/* Stats row */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.75, duration: 0.8 }}
+              className="flex gap-8 mt-14 pt-8 border-t border-white/10"
+            >
+              {[["4+", "Models"], ["100km", "Max Range"], ["80%", "Cost Savings"]].map(([val, lbl]) => (
+                <div key={lbl}>
+                  <div className="text-white font-black text-2xl">{val}</div>
+                  <div className="text-white/40 text-xs uppercase tracking-widest mt-0.5">{lbl}</div>
+                </div>
+              ))}
+            </motion.div>
+          </div>
         </div>
 
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2 }}
-          className="absolute bottom-8 right-10 flex flex-col items-center gap-2 text-white/50"
-        >
-          <span className="text-xs tracking-widest uppercase rotate-90 mb-2">Scroll</span>
-          <ArrowDown className="w-4 h-4 animate-bounce" />
-        </motion.div>
+        {/* Bottom fade */}
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
       </section>
 
       {/* ─── MARQUEE STRIP ─── */}
