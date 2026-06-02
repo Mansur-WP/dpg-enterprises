@@ -1,0 +1,265 @@
+Act as a world-class UI/UX designer, senior frontend engineer, creative director, product designer, and branding expert.
+
+I am uploading the official MUNNASP NIG. LTD. logo and multiple product images. Analyze all uploaded images carefully and build the website around them.
+
+IMPORTANT IMAGE INSTRUCTIONS
+
+* Use the uploaded logo as the official company logo.
+* Use ONLY the uploaded bike/scooter images as the primary visual content.
+* Extract the entire color palette from the uploaded logo.
+* Use the uploaded images throughout the website.
+* The website should feel custom-designed specifically for MUNNASP NIG. LTD.
+* Do not use generic stock photos unless absolutely necessary.
+* The uploaded products should be the star of the website.
+
+COMPANY INFORMATION
+
+Company Name:
+MUNNASP NIG. LTD.
+
+Tagline:
+GO ELECTRIC, GO SMART!
+
+Phone Number:
+08059434243
+
+Address:
+Muhammadu Buhari Way, Along Kofar Kabuga – Kofar Ruwa Road, Kano State, Nigeria.
+
+PROJECT GOAL
+
+Create a premium electric mobility company website that positions MUNNASP NIG. LTD. as a leading electric transportation brand in Nigeria.
+
+The final website should look modern, futuristic, professional, trustworthy, investor-ready, customer-ready, and suitable for a growing electric vehicle company.
+
+The design quality should rival international EV brands such as Tesla, NIU, Segway, Gogoro, and leading electric mobility startups.
+
+TECH STACK
+
+* Next.js 15 App Router
+* TypeScript
+* Tailwind CSS
+* shadcn/ui
+* Framer Motion
+* Lucide React Icons
+* Responsive Design
+* SEO Optimized
+* Clean Architecture
+* Reusable Components
+* Production Ready Code
+* Mobile First Design
+
+DESIGN DIRECTION
+
+Create a futuristic EV company aesthetic.
+
+Visual Style:
+
+* Premium
+* Modern
+* Minimalist
+* Clean
+* Corporate
+* Technology-focused
+* Electric mobility branding
+* High-end product showcase
+
+Color Palette:
+
+Extract directly from the uploaded logo:
+
+* Electric Blue
+* Energy Green
+* White
+* Dark Gray
+* Black
+
+Include:
+
+* Glassmorphism effects
+* Smooth animations
+* Modern hover effects
+* Premium typography
+* Scroll animations
+* Beautiful gradients
+* High-end product presentation
+
+WEBSITE STRUCTURE
+
+HOME PAGE
+
+Hero Section
+
+Use the strongest uploaded product image.
+
+Headline:
+
+Driving Nigeria's Electric Future
+
+Subheadline:
+
+Premium Electric Bikes, Scooters & Smart Mobility Solutions Built for the Next Generation of Transportation.
+
+Buttons:
+
+* Explore Models
+* Contact Us
+
+Include:
+
+* Hero animation
+* Floating energy-inspired design elements
+* Professional EV branding
+
+WHY CHOOSE MUNNASP SECTION
+
+Create professional cards for:
+
+* Eco-Friendly Transportation
+* Low Running Costs
+* Advanced Battery Technology
+* Reliable Performance
+* Smart Urban Mobility
+* Sustainable Future
+
+FEATURED PRODUCTS
+
+Use uploaded bike images.
+
+Create beautiful premium product cards.
+
+Generate professional placeholder names such as:
+
+* MUNNASP Urban X
+* MUNNASP E-Rider Pro
+* MUNNASP City Volt
+* MUNNASP Smart Cruiser
+
+Include placeholder specifications:
+
+* Range
+* Battery
+* Charging Time
+* Top Speed
+
+ABOUT PAGE
+
+Generate professional company content.
+
+Sections:
+
+* Company Overview
+* Mission
+* Vision
+* Our Values
+* Why Electric Mobility Matters
+* Our Commitment to Sustainability
+
+PRODUCTS PAGE
+
+Create a modern product catalog.
+
+For each uploaded bike image:
+
+* Product Image
+* Product Name
+* Description
+* Range
+* Battery
+* Charging Time
+* Top Speed
+* Request Quote Button
+
+Use realistic placeholder specifications where official data is unavailable.
+
+BENEFITS SECTION
+
+Create visually attractive sections explaining:
+
+* Fuel Cost Savings
+* Cleaner Environment
+* Reduced Maintenance
+* Quiet Transportation
+* Smart Technology
+* Sustainable Mobility
+
+GALLERY PAGE
+
+Use all uploaded images.
+
+Features:
+
+* Masonry Layout
+* Lightbox Preview
+* Hover Effects
+* Smooth Animations
+* Professional Product Photography Presentation
+
+CONTACT PAGE
+
+Display:
+
+Phone:
+08059434243
+
+Address:
+Muhammadu Buhari Way, Along Kofar Kabuga – Kofar Ruwa Road, Kano State, Nigeria.
+
+Include:
+
+* Contact Form
+* WhatsApp CTA
+* Map Placeholder
+* Business Hours
+* Inquiry Section
+
+FOOTER
+
+Include:
+
+MUNNASP NIG. LTD.
+
+GO ELECTRIC, GO SMART!
+
+Phone Number
+
+Address
+
+Social Media Placeholders
+
+USER EXPERIENCE
+
+* Fully Responsive
+* Mobile Optimized
+* Tablet Optimized
+* Desktop Optimized
+* Fast Loading
+* Smooth Navigation
+* Sticky Navbar
+* Modern Footer
+* Professional Layout
+
+CONTENT REQUIREMENTS
+
+* Do not use lorem ipsum.
+* Generate realistic company content.
+* Write persuasive marketing copy.
+* Maintain a professional corporate tone.
+* Make the company appear established and trustworthy.
+* Focus on innovation, sustainability, technology, and mobility.
+
+FINAL OBJECTIVE
+
+When management views this website, it should feel like a real premium electric mobility company website that is already ready for customers, investors, distributors, and business partners.
+
+Generate ALL code files completely.
+
+Do not skip files.
+
+Do not use placeholders such as "add code here".
+
+Create a fully functional, production-ready Next.js project ready to run with:
+
+npm install
+
+npm run dev
