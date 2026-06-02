@@ -323,6 +323,77 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ─── TESTIMONIALS ─── */}
+      <section className="py-24 px-6 max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <p className="text-[#3aaa35] text-xs font-bold tracking-[0.2em] uppercase mb-3">Customer Stories</p>
+          <h2 className="text-4xl md:text-5xl font-black">What Riders Are Saying</h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {[
+            {
+              quote: "I was spending over ₦40,000 a month on fuel. Since switching to MUNNASP, I spend less than ₦4,000 on charging. The savings paid for most of the bike in the first year.",
+              name: "Abdullahi Musa",
+              role: "Daily Commuter, Kano",
+              initial: "A",
+              color: "#1a3a8f",
+            },
+            {
+              quote: "The Urban X is smooth, quiet, and gets me through Kano traffic with zero stress. No fuel queues, no engine problems. I should have done this two years ago.",
+              name: "Ibrahim Suleiman",
+              role: "Business Owner, Kano",
+              initial: "I",
+              color: "#3aaa35",
+            },
+            {
+              quote: "As a delivery rider, running costs are everything. MUNNASP cut my expenses dramatically. The team at the showroom were very helpful with the right model for my routes.",
+              name: "Yakubu Danladi",
+              role: "Delivery Rider, Kano",
+              initial: "Y",
+              color: "#1a3a8f",
+            },
+          ].map((t, i) => (
+            <motion.div
+              key={t.name}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.12, duration: 0.6 }}
+              className="rounded-3xl p-8 bg-neutral-50 border border-neutral-100 flex flex-col"
+            >
+              {/* Stars */}
+              <div className="flex gap-1 mb-5">
+                {[...Array(5)].map((_, s) => (
+                  <svg key={s} className="w-4 h-4 fill-amber-400" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+              </div>
+
+              {/* Quote */}
+              <p className="text-neutral-700 text-sm leading-relaxed flex-grow mb-7">
+                "{t.quote}"
+              </p>
+
+              {/* Author */}
+              <div className="flex items-center gap-3 border-t border-neutral-100 pt-5">
+                <div
+                  className="w-10 h-10 rounded-full flex items-center justify-center text-white font-black text-sm shrink-0"
+                  style={{ backgroundColor: t.color }}
+                >
+                  {t.initial}
+                </div>
+                <div>
+                  <div className="font-bold text-neutral-950 text-sm">{t.name}</div>
+                  <div className="text-neutral-400 text-xs">{t.role}</div>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
       {/* ─── DETAIL SHOT ─── */}
       <section className="relative h-[55vh] overflow-hidden">
         <img src={detailImg} alt="Electric bike detail" className="w-full h-full object-cover object-center" style={{ filter: "brightness(0.55)" }} />

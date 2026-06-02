@@ -36,6 +36,31 @@ export default function Contact() {
         </motion.div>
       </div>
 
+      {/* ─── MAP ─── */}
+      <div className="max-w-7xl mx-auto px-6 pb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1, duration: 0.6 }}
+          className="rounded-3xl overflow-hidden border border-neutral-100 shadow-sm"
+          style={{ height: "360px" }}
+        >
+          <iframe
+            title="MUNNASP NIG. LTD. Showroom Location"
+            width="100%"
+            height="100%"
+            frameBorder="0"
+            style={{ border: 0 }}
+            referrerPolicy="no-referrer-when-downgrade"
+            src="https://maps.google.com/maps?q=Muhammadu+Buhari+Way,+Kofar+Kabuga,+Kano,+Nigeria&output=embed&z=15"
+            allowFullScreen
+          />
+        </motion.div>
+        <p className="text-neutral-400 text-xs mt-3 px-1">
+          📍 Muhammadu Buhari Way, Along Kofar Kabuga – Kofar Ruwa Road, Kano State, Nigeria
+        </p>
+      </div>
+
       <div className="max-w-7xl mx-auto px-6 pb-28">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
 
