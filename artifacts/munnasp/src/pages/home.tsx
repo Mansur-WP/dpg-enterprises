@@ -435,8 +435,8 @@ export default function Home() {
 
           {/* Quick contact links */}
           <div className="flex flex-wrap justify-center gap-6 text-sm text-neutral-500">
-            <a href="tel:08059434243" className="inline-flex items-center gap-2 hover:text-neutral-900 transition-colors">
-              <Phone className="w-4 h-4" /> 08059434243
+            <a href="https://wa.me/2349042834479?text=Hello%20MUNASSAP%21%20I%27d%20like%20to%20learn%20more%20about%20your%20electric%20scooters." target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-neutral-900 transition-colors">
+              <Phone className="w-4 h-4" /> 09042834479
             </a>
             <span className="inline-flex items-center gap-2">
               <MapPin className="w-4 h-4" /> Muhammadu Buhari Way, Kano

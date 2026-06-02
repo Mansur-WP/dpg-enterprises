@@ -67,7 +67,7 @@ export default function Contact() {
           {/* Info */}
           <div className="lg:col-span-2 space-y-0">
             {[
-              { icon: Phone, label: "Phone", value: "08059434243", sub: "Available during business hours", href: "tel:08059434243" },
+              { icon: Phone, label: "Phone", value: "09042834479", sub: "Tap to call or WhatsApp us", href: "https://wa.me/2349042834479?text=Hello%20MUNASSAP%21%20I%27d%20like%20to%20learn%20more%20about%20your%20electric%20scooters." },
               { icon: MapPin, label: "Showroom", value: "Muhammadu Buhari Way", sub: "Along Kofar Kabuga – Kofar Ruwa Road, Kano State, Nigeria", href: "https://maps.google.com/?q=Muhammadu+Buhari+Way+Kano+Nigeria" },
               { icon: Clock, label: "Business Hours", value: "Mon – Sat: 8:00 AM – 6:00 PM", sub: "Sunday: 10:00 AM – 3:00 PM", href: null },
             ].map((item, i) => (
@@ -102,7 +102,7 @@ export default function Contact() {
               className="border-t border-neutral-100 pt-8"
             >
               <a
-                href="https://wa.me/2348059434243?text=Hello%20MUNASSAP%21%20I%27d%20like%20to%20learn%20more%20about%20your%20electric%20scooters."
+                href="https://wa.me/2349042834479?text=Hello%20MUNASSAP%21%20I%27d%20like%20to%20learn%20more%20about%20your%20electric%20scooters."
                 target="_blank"
                 rel="noopener noreferrer"
                 data-testid="button-whatsapp"

@@ -40,7 +40,7 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-[#3aaa35] shrink-0" />
-                <a href="tel:08059434243" className="text-neutral-400 text-sm hover:text-white transition-colors">08059434243</a>
+                <a href="https://wa.me/2349042834479?text=Hello%20MUNASSAP%21%20I%27d%20like%20to%20learn%20more%20about%20your%20electric%20scooters." target="_blank" rel="noopener noreferrer" className="text-neutral-400 text-sm hover:text-white transition-colors">09042834479</a>
               </li>
             </ul>
           </div>
