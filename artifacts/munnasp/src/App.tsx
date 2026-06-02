@@ -9,6 +9,7 @@ import Products from "./pages/products";
 import About from "./pages/about";
 import Gallery from "./pages/gallery";
 import Contact from "./pages/contact";
+import WhyElectric from "./pages/why-electric";
 import NotFound from "./pages/not-found";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="/about" component={About} />
           <Route path="/gallery" component={Gallery} />
           <Route path="/contact" component={Contact} />
+          <Route path="/why-electric" component={WhyElectric} />
           <Route component={NotFound} />
         </Switch>
       </main>
