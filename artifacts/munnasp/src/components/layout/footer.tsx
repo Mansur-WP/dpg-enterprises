@@ -1,75 +1,54 @@
-import React from "react";
 import { Link } from "wouter";
 import logoSrc from "@assets/image_1780424986415.png";
-import { Facebook, Twitter, Instagram, Linkedin, MapPin, Phone, Mail } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin, MapPin, Phone } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-black border-t border-white/10 pt-16 pb-8">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-          <div className="space-y-4">
-            <img src={logoSrc} alt="MUNNASP Logo" className="h-10" />
-            <p className="text-muted-foreground text-sm font-medium">
-              GO ELECTRIC, GO SMART!
+    <footer className="bg-neutral-950 text-white pt-20 pb-10">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 pb-16 border-b border-white/10">
+          <div className="md:col-span-2">
+            <img src={logoSrc} alt="MUNNASP NIG. LTD." className="h-10 mb-5" />
+            <p className="text-white/40 text-xs font-bold uppercase tracking-[0.2em] mb-4">Go Electric, Go Smart!</p>
+            <p className="text-neutral-400 text-sm leading-relaxed max-w-sm">
+              Leading Nigeria into a sustainable future with premium electric mobility solutions built for power, style, and efficiency.
             </p>
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              Leading Nigeria into a sustainable future with premium electric mobility solutions designed for power, style, and efficiency.
-            </p>
-          </div>
-          
-          <div>
-            <h4 className="text-white font-bold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              <li><Link href="/products" className="text-muted-foreground hover:text-white transition-colors text-sm">Our Models</Link></li>
-              <li><Link href="/gallery" className="text-muted-foreground hover:text-white transition-colors text-sm">Showroom</Link></li>
-              <li><Link href="/about" className="text-muted-foreground hover:text-white transition-colors text-sm">About MUNNASP</Link></li>
-              <li><Link href="/contact" className="text-muted-foreground hover:text-white transition-colors text-sm">Contact Us</Link></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-white font-bold mb-4">Contact Info</h4>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3 text-sm text-muted-foreground">
-                <MapPin className="w-5 h-5 text-secondary shrink-0" />
-                <span>Muhammadu Buhari Way, Along Kofar Kabuga – Kofar Ruwa Road, Kano State, Nigeria</span>
-              </li>
-              <li className="flex items-center gap-3 text-sm text-muted-foreground">
-                <Phone className="w-5 h-5 text-secondary shrink-0" />
-                <span>08059434243</span>
-              </li>
-              <li className="flex items-center gap-3 text-sm text-muted-foreground">
-                <Mail className="w-5 h-5 text-secondary shrink-0" />
-                <span>info@munnasp.com.ng</span>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-white font-bold mb-4">Follow Us</h4>
-            <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-primary transition-colors">
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-primary transition-colors">
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-primary transition-colors">
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-primary transition-colors">
-                <Linkedin className="w-5 h-5" />
-              </a>
+            <div className="flex gap-3 mt-6">
+              {[Facebook, Twitter, Instagram, Linkedin].map((Icon, i) => (
+                <a key={i} href="#" className="w-9 h-9 rounded-full bg-white/5 hover:bg-white/15 flex items-center justify-center transition-colors">
+                  <Icon className="w-4 h-4 text-white/60" />
+                </a>
+              ))}
             </div>
           </div>
+
+          <div>
+            <p className="text-white text-sm font-bold mb-5">Quick Links</p>
+            <ul className="space-y-3">
+              {[["Models", "/products"], ["Gallery", "/gallery"], ["About", "/about"], ["Contact", "/contact"]].map(([l, h]) => (
+                <li key={l}><Link href={h} className="text-neutral-400 text-sm hover:text-white transition-colors">{l}</Link></li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <p className="text-white text-sm font-bold mb-5">Contact</p>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3">
+                <MapPin className="w-4 h-4 text-[#3aaa35] shrink-0 mt-0.5" />
+                <span className="text-neutral-400 text-sm leading-relaxed">Muhammadu Buhari Way, Along Kofar Kabuga – Kofar Ruwa Road, Kano State, Nigeria</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Phone className="w-4 h-4 text-[#3aaa35] shrink-0" />
+                <a href="tel:08059434243" className="text-neutral-400 text-sm hover:text-white transition-colors">08059434243</a>
+              </li>
+            </ul>
+          </div>
         </div>
-        
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-muted-foreground text-sm">
-            © {new Date().getFullYear()} MUNNASP NIG. LTD. All rights reserved.
-          </p>
-          <div className="flex gap-6 text-sm text-muted-foreground">
+
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-neutral-500 text-sm">
+          <p>© {new Date().getFullYear()} MUNNASP NIG. LTD. All rights reserved.</p>
+          <div className="flex gap-6">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
           </div>

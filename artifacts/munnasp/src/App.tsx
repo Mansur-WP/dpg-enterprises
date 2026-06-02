@@ -15,7 +15,7 @@ function App() {
   return (
     <div className="min-h-screen flex flex-col font-sans text-foreground bg-background">
       <Navbar />
-      <main className="flex-grow pt-20">
+      <main className="flex-grow">
         <Switch>
           <Route path="/" component={Home} />
           <Route path="/products" component={Products} />
