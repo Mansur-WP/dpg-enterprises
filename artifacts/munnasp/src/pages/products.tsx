@@ -139,6 +139,23 @@ export default function Products() {
                 ))}
               </div>
 
+              {/* Pricing badge */}
+              <div className="flex items-center gap-3 mb-6 p-4 rounded-2xl bg-[#f0fff4] border border-[#3aaa35]/20">
+                <span className="text-[#3aaa35] text-lg font-black">₦</span>
+                <div>
+                  <div className="font-bold text-neutral-950 text-sm">Contact for Pricing</div>
+                  <div className="text-neutral-400 text-xs mt-0.5">Call or WhatsApp us for the best available price</div>
+                </div>
+                <a
+                  href="https://wa.me/2349042834479?text=Hello%20MUNASSAP%21%20I%27d%20like%20to%20know%20the%20price%20of%20the%20electric%20scooter."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ml-auto shrink-0 text-xs font-bold text-[#3aaa35] underline underline-offset-2 hover:text-[#2d8828] transition-colors"
+                >
+                  WhatsApp →
+                </a>
+              </div>
+
               <Link
                 href="/contact"
                 data-testid={`button-quote-${i}`}
