@@ -46,7 +46,7 @@ export default function Contact() {
           style={{ height: "360px" }}
         >
           <iframe
-            title="MUNNASP NIG. LTD. Showroom Location"
+            title="MUNASSAP NIG. LTD. Showroom Location"
             width="100%"
             height="100%"
             frameBorder="0"
@@ -102,7 +102,7 @@ export default function Contact() {
               className="border-t border-neutral-100 pt-8"
             >
               <a
-                href="https://wa.me/2348059434243?text=Hello%20MUNNASP%21%20I%27d%20like%20to%20learn%20more%20about%20your%20electric%20scooters."
+                href="https://wa.me/2348059434243?text=Hello%20MUNASSAP%21%20I%27d%20like%20to%20learn%20more%20about%20your%20electric%20scooters."
                 target="_blank"
                 rel="noopener noreferrer"
                 data-testid="button-whatsapp"

@@ -8,7 +8,7 @@ import smartCruiserImg from "@assets/image_1780425014398.png";
 
 const products = [
   {
-    name: "MUNNASP Urban X",
+    name: "MUNASSAP Urban X",
     tagline: "The City Conqueror",
     description:
       "Engineered for urban dominance. The Urban X blends futuristic styling with raw electric performance. Its angular body, intelligent dashboard, and powerful hub motor make it the definitive choice for professionals navigating Nigeria's busiest streets.",
@@ -23,7 +23,7 @@ const products = [
     features: ["LED Halo Headlight", "Digital Dashboard", "Anti-Theft Alarm", "USB Charging Port"],
   },
   {
-    name: "MUNNASP E-Rider Pro",
+    name: "MUNASSAP E-Rider Pro",
     tagline: "Classic Reimagined",
     description:
       "A timeless silhouette meets cutting-edge electric technology. The E-Rider Pro preserves the classic scooter aesthetic while delivering a completely silent, zero-emission ride. Ideal for riders who value elegance and efficiency in equal measure.",
@@ -38,7 +38,7 @@ const products = [
     features: ["Classic Chrome Accents", "Comfortable Dual Seat", "Under-Seat Storage", "Disc Brakes"],
   },
   {
-    name: "MUNNASP City Volt",
+    name: "MUNASSAP City Volt",
     tagline: "Maximum Range Champion",
     description:
       "When distance matters, the City Volt delivers. Boasting the highest range in our lineup at 100 km per charge, this model is built for delivery riders, daily commuters, and anyone who refuses to stop short.",
@@ -53,7 +53,7 @@ const products = [
     features: ["Extended Battery Pack", "Regenerative Braking", "Heavy-Duty Suspension", "Smart App Ready"],
   },
   {
-    name: "MUNNASP Smart Cruiser",
+    name: "MUNASSAP Smart Cruiser",
     tagline: "Stealth and Power",
     description:
       "Matte black finish, aggressive stance, whisper-quiet performance. The Smart Cruiser is for riders who prefer their power understated. A head-turner that lets the ride do the talking.",

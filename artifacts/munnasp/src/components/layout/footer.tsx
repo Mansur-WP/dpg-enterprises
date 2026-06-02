@@ -8,7 +8,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 pb-16 border-b border-white/10">
           <div className="md:col-span-2">
-            <img src={logoSrc} alt="MUNNASP NIG. LTD." className="h-10 mb-5" />
+            <img src={logoSrc} alt="MUNASSAP NIG. LTD." className="h-10 mb-5" />
             <p className="text-white/40 text-xs font-bold uppercase tracking-[0.2em] mb-4">Go Electric, Go Smart!</p>
             <p className="text-neutral-400 text-sm leading-relaxed max-w-sm">
               Leading Nigeria into a sustainable future with premium electric mobility solutions built for power, style, and efficiency.
@@ -47,7 +47,7 @@ export function Footer() {
         </div>
 
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-neutral-500 text-sm">
-          <p>© {new Date().getFullYear()} MUNNASP NIG. LTD. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} MUNASSAP NIG. LTD. All rights reserved.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-white transition-colors">Terms of Service</a>

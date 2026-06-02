@@ -57,7 +57,7 @@ const nigeriaReasons = [
   {
     icon: Sun,
     title: "Abundant Sunlight",
-    desc: "Nigeria receives over 2,600 hours of sunshine per year — ideal for solar-charged electric vehicles. Pair your MUNNASP with a small solar panel and ride for free.",
+    desc: "Nigeria receives over 2,600 hours of sunshine per year — ideal for solar-charged electric vehicles. Pair your MUNASSAP with a small solar panel and ride for free.",
   },
   {
     icon: TrendingDown,
@@ -182,7 +182,7 @@ export default function WhyElectric() {
               </div>
               <div className="px-6 py-4 text-xs font-bold uppercase tracking-wider border-l border-white/10">
                 <div className="flex items-center gap-2 text-[#3aaa35]">
-                  <Zap className="w-4 h-4" /> MUNNASP Electric
+                  <Zap className="w-4 h-4" /> MUNASSAP Electric
                 </div>
               </div>
             </div>
@@ -249,7 +249,7 @@ export default function WhyElectric() {
                 Lithium Power.<br />Built for the Heat.
               </h2>
               <p className="text-neutral-400 leading-relaxed mb-8">
-                Every MUNNASP uses advanced lithium-ion battery technology specifically chosen for Nigeria's climate — high-temperature tolerance, fast charging, and long cycle life designed to handle Kano's heat and humidity.
+                Every MUNASSAP uses advanced lithium-ion battery technology specifically chosen for Nigeria's climate — high-temperature tolerance, fast charging, and long cycle life designed to handle Kano's heat and humidity.
               </p>
               <div className="space-y-4">
                 {[

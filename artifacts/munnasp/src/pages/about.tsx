@@ -5,7 +5,7 @@ import logoSrc from "@assets/image_1780424986415.png";
 import showroomImg from "@assets/image_1780425029747.png";
 
 const values = [
-  { title: "Excellence", desc: "Every product that earns the MUNNASP name has been held to the highest standard. We don't cut corners — we set them." },
+  { title: "Excellence", desc: "Every product that earns the MUNASSAP name has been held to the highest standard. We don't cut corners — we set them." },
   { title: "Sustainability", desc: "Our commitment to the planet is non-negotiable. Electric mobility isn't a product category for us — it's a conviction." },
   { title: "Innovation", desc: "We stay at the cutting edge of EV technology, constantly seeking smarter, more efficient ways to move Nigeria forward." },
   { title: "Integrity", desc: "Honest pricing. Honest performance claims. Honest after-sales support. We earn trust the old-fashioned way — every day." },
@@ -37,7 +37,7 @@ export default function About() {
 
       {/* Showroom image full-width */}
       <div className="relative h-[50vh] overflow-hidden mb-24">
-        <img src={showroomImg} alt="MUNNASP Showroom" className="w-full h-full object-cover" />
+        <img src={showroomImg} alt="MUNASSAP Showroom" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-black/40 flex items-end p-10">
           <div>
             <p className="text-white font-black text-2xl">Our Flagship Showroom</p>
@@ -57,8 +57,8 @@ export default function About() {
             <p className="text-[#3aaa35] text-xs font-bold tracking-[0.2em] uppercase mb-4">Who We Are</p>
             <h2 className="text-4xl font-black mb-8">Nigeria's Electric Mobility Pioneer</h2>
             <div className="space-y-5 text-neutral-500 leading-relaxed">
-              <p>MUNNASP NIG. LTD. is a premium electric mobility company headquartered in Kano State, Nigeria. We source, distribute, and support high-performance electric scooters and bikes designed to thrive on Nigerian roads and serve Nigerian riders.</p>
-              <p>We established ourselves at the intersection of a critical moment: rising fuel costs, growing environmental awareness, and urgent demand for smarter urban transportation. MUNNASP exists to meet that moment head-on.</p>
+              <p>MUNASSAP NIG. LTD. is a premium electric mobility company headquartered in Kano State, Nigeria. We source, distribute, and support high-performance electric scooters and bikes designed to thrive on Nigerian roads and serve Nigerian riders.</p>
+              <p>We established ourselves at the intersection of a critical moment: rising fuel costs, growing environmental awareness, and urgent demand for smarter urban transportation. MUNASSAP exists to meet that moment head-on.</p>
               <p>From our showroom on Muhammadu Buhari Way, we serve individual riders, businesses, logistics operators, and institutions seeking to modernize their fleets with clean, cost-effective electric mobility.</p>
             </div>
           </motion.div>

@@ -19,7 +19,7 @@ const reasons = [
   { icon: Leaf, title: "Zero Emissions", desc: "No exhaust, no guilt. Every ride is a vote for cleaner Nigerian cities." },
   { icon: BarChart3, title: "80% Lower Running Cost", desc: "Electricity costs a fraction of petrol. Charge overnight, ride all day." },
   { icon: BatteryCharging, title: "Advanced Battery Tech", desc: "Lithium-ion cells engineered for Nigeria's heat, dust, and daily demand." },
-  { icon: Shield, title: "Built to Last", desc: "Rigorous quality checks. Every MUNNASP leaves our showroom ready to perform." },
+  { icon: Shield, title: "Built to Last", desc: "Rigorous quality checks. Every MUNASSAP leaves our showroom ready to perform." },
   { icon: Cpu, title: "Smart Features", desc: "Digital displays, anti-theft alarms, and smart charging in every model." },
   { icon: Zap, title: "Instant Torque", desc: "Electric motors deliver full power the moment you twist the throttle." },
 ];
@@ -33,7 +33,7 @@ export default function Home() {
         {/* Background photo */}
         <img
           src={showroomImg}
-          alt="MUNNASP Showroom"
+          alt="MUNASSAP Showroom"
           className="absolute inset-0 w-full h-full object-cover object-center scale-105"
           style={{ filter: "brightness(0.45)" }}
         />
@@ -157,7 +157,7 @@ export default function Home() {
                 <span className="w-5 h-px bg-[#3aaa35]" /> Flagship Model
               </p>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-5">
-                MUNNASP<br />Urban X
+                MUNASSAP<br />Urban X
               </h2>
               <p className="text-neutral-400 text-base leading-relaxed mb-8 max-w-md">
                 Engineered for urban dominance. Futuristic styling meets real-world performance — the definitive choice for Nigeria's modern city rider.
@@ -200,7 +200,7 @@ export default function Home() {
               <div className="relative aspect-square flex items-center justify-center">
                 <img
                   src={urbanXImg}
-                  alt="MUNNASP Urban X"
+                  alt="MUNASSAP Urban X"
                   className="w-5/6 h-5/6 object-contain relative z-10"
                   style={{
                     maskImage: "radial-gradient(ellipse 80% 78% at 50% 52%, black 40%, rgba(0,0,0,0.8) 58%, transparent 76%)",
@@ -284,7 +284,7 @@ export default function Home() {
                 </div>
                 <div className="px-1">
                   <p className="text-neutral-400 text-xs font-medium uppercase tracking-wider mb-1">{p.tagline}</p>
-                  <h3 className="font-bold text-neutral-950 text-base mb-2">MUNNASP {p.name}</h3>
+                  <h3 className="font-bold text-neutral-950 text-base mb-2">MUNASSAP {p.name}</h3>
                   <div className="flex gap-4 text-sm text-neutral-500">
                     <span><strong className="text-neutral-950">{p.range}</strong> range</span>
                     <span><strong className="text-neutral-950">{p.speed}</strong> top</span>
@@ -296,7 +296,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── WHY MUNNASP ─── */}
+      {/* ─── WHY MUNASSAP ─── */}
       <section className="py-28 px-6 bg-neutral-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
@@ -333,7 +333,7 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
             {
-              quote: "I was spending over ₦40,000 a month on fuel. Since switching to MUNNASP, I spend less than ₦4,000 on charging. The savings paid for most of the bike in the first year.",
+              quote: "I was spending over ₦40,000 a month on fuel. Since switching to MUNASSAP, I spend less than ₦4,000 on charging. The savings paid for most of the bike in the first year.",
               name: "Abdullahi Musa",
               role: "Daily Commuter, Kano",
               initial: "A",
@@ -347,7 +347,7 @@ export default function Home() {
               color: "#3aaa35",
             },
             {
-              quote: "As a delivery rider, running costs are everything. MUNNASP cut my expenses dramatically. The team at the showroom were very helpful with the right model for my routes.",
+              quote: "As a delivery rider, running costs are everything. MUNASSAP cut my expenses dramatically. The team at the showroom were very helpful with the right model for my routes.",
               name: "Yakubu Danladi",
               role: "Delivery Rider, Kano",
               initial: "Y",

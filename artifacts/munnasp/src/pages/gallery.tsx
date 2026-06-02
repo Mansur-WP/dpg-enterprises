@@ -9,12 +9,12 @@ import img5 from "@assets/image_1780424999546.png";
 import img6 from "@assets/image_1780425029747.png";
 
 const items = [
-  { src: img6, alt: "MUNNASP Showroom", caption: "Our Kano Showroom — Ready for Your Visit", span: "col-span-2 row-span-2" },
-  { src: img1, alt: "MUNNASP Urban X", caption: "MUNNASP Urban X — The City Conqueror", span: "" },
-  { src: img2, alt: "MUNNASP E-Rider Pro", caption: "MUNNASP E-Rider Pro — Classic Reimagined", span: "" },
+  { src: img6, alt: "MUNASSAP Showroom", caption: "Our Kano Showroom — Ready for Your Visit", span: "col-span-2 row-span-2" },
+  { src: img1, alt: "MUNASSAP Urban X", caption: "MUNASSAP Urban X — The City Conqueror", span: "" },
+  { src: img2, alt: "MUNASSAP E-Rider Pro", caption: "MUNASSAP E-Rider Pro — Classic Reimagined", span: "" },
   { src: img5, alt: "Detail Shot", caption: "Precision Engineering — Halo Headlight", span: "" },
-  { src: img3, alt: "MUNNASP City Volt", caption: "MUNNASP City Volt — Maximum Range", span: "" },
-  { src: img4, alt: "MUNNASP Smart Cruiser", caption: "MUNNASP Smart Cruiser — Stealth and Power", span: "" },
+  { src: img3, alt: "MUNASSAP City Volt", caption: "MUNASSAP City Volt — Maximum Range", span: "" },
+  { src: img4, alt: "MUNASSAP Smart Cruiser", caption: "MUNASSAP Smart Cruiser — Stealth and Power", span: "" },
 ];
 
 export default function Gallery() {
@@ -27,7 +27,7 @@ export default function Gallery() {
           <p className="text-[#3aaa35] text-xs font-bold tracking-[0.2em] uppercase mb-3">Showroom</p>
           <h1 className="text-5xl md:text-7xl font-black leading-tight mb-4">Gallery</h1>
           <p className="text-neutral-500 text-lg max-w-md">
-            A visual journey through the MUNNASP lineup. Click any image to view in full.
+            A visual journey through the MUNASSAP lineup. Click any image to view in full.
           </p>
         </motion.div>
       </div>

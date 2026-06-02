@@ -40,7 +40,7 @@ export function Navbar() {
         <Link href="/" className="shrink-0">
           <img
             src={logoSrc}
-            alt="MUNNASP NIG. LTD."
+            alt="MUNASSAP NIG. LTD."
             className="h-9 w-auto"
             data-testid="img-logo"
           />
