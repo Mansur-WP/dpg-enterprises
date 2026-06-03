@@ -52,3 +52,6 @@ This project is perfectly optimized for free deployment on [Vercel](https://verc
 
 ---
 *Built for DPG Enterprises. Go Electric, Go Smart.*
+
+---
+*This repository is actively maintained.*
