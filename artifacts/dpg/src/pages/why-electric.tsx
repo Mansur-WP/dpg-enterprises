@@ -72,7 +72,7 @@ const nigeriaReasons = [
   {
     icon: Leaf,
     title: "Cleaner Nigerian Cities",
-    desc: "Air pollution in Kano and Lagos costs lives. Every electric rider removes one more exhaust pipe from our streets. Be part of the solution.",
+    desc: "Air pollution in Kano, Kaduna and Lagos costs lives. Every electric rider removes one more exhaust pipe from our streets. Be part of the solution.",
   },
   {
     icon: ShieldCheck,
