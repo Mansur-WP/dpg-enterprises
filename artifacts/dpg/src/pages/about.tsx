@@ -84,7 +84,7 @@ export default function About() {
 
         {/* Stats bar */}
         <div className="bg-neutral-950 rounded-3xl p-10 grid grid-cols-2 md:grid-cols-4 gap-8 mb-24">
-          {[["4+", "Premium Models"], ["100 km", "Max Range"], ["80%", "Fuel Savings"], ["0g", "CO₂ Emissions"]].map(([val, lbl]) => (
+          {[["20+", "Premium Models"], ["100 km", "Max Range"], ["80%", "Fuel Savings"], ["0g", "CO₂ Emissions"]].map(([val, lbl]) => (
             <div key={lbl} className="text-center">
               <div className="text-4xl font-black text-white mb-1">{val}</div>
               <div className="text-neutral-400 text-xs uppercase tracking-widest">{lbl}</div>
