@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowRight, Target, Eye, Leaf } from "lucide-react";
+import { ArrowRight, Target, Eye, Leaf, Wrench } from "lucide-react";
 import logoSrc from "@assets/image_1780424986415.png";
 import showroomImg from "@assets/image_1780425029747.png";
 
 const values = [
-  { title: "Excellence", desc: "Every product that earns the MUNASSAP name has been held to the highest standard. We don't cut corners — we set them." },
+  { title: "Excellence", desc: "Every product that earns the DPG name has been held to the highest standard. We don't cut corners — we set them." },
   { title: "Sustainability", desc: "Our commitment to the planet is non-negotiable. Electric mobility isn't a product category for us — it's a conviction." },
   { title: "Innovation", desc: "We stay at the cutting edge of EV technology, constantly seeking smarter, more efficient ways to move Nigeria forward." },
   { title: "Integrity", desc: "Honest pricing. Honest performance claims. Honest after-sales support. We earn trust the old-fashioned way — every day." },
@@ -25,7 +25,7 @@ export default function About() {
           transition={{ duration: 0.6 }}
           className="max-w-3xl"
         >
-          <p className="text-[#3aaa35] text-xs font-bold tracking-[0.2em] uppercase mb-4">Our Story</p>
+          <p className="text-[#3aaa35] text-sm font-bold tracking-[0.3em] uppercase mb-4">We Are DPG Enterprises</p>
           <h1 className="text-5xl md:text-7xl font-black leading-tight mb-8">
             Born in Kano.<br />Built for Nigeria.
           </h1>
@@ -37,7 +37,7 @@ export default function About() {
 
       {/* Showroom image full-width */}
       <div className="relative h-[50vh] overflow-hidden mb-24">
-        <img src={showroomImg} alt="MUNASSAP Showroom" className="w-full h-full object-cover" />
+        <img src={showroomImg} alt="DPG Showroom" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-black/40 flex items-end p-10">
           <div>
             <p className="text-white font-black text-2xl">Our Flagship Showroom</p>
@@ -57,8 +57,8 @@ export default function About() {
             <p className="text-[#3aaa35] text-xs font-bold tracking-[0.2em] uppercase mb-4">Who We Are</p>
             <h2 className="text-4xl font-black mb-8">Nigeria's Electric Mobility Pioneer</h2>
             <div className="space-y-5 text-neutral-500 leading-relaxed">
-              <p>MUNASSAP NIG. LTD. is a premium electric mobility company headquartered in Kano State, Nigeria. We source, distribute, and support high-performance electric scooters and bikes designed to thrive on Nigerian roads and serve Nigerian riders.</p>
-              <p>We established ourselves at the intersection of a critical moment: rising fuel costs, growing environmental awareness, and urgent demand for smarter urban transportation. MUNASSAP exists to meet that moment head-on.</p>
+              <p>DPG Enterprises is a premium electric mobility company headquartered in Kano State, Nigeria. We source, distribute, and support high-performance electric scooters and bikes designed to thrive on Nigerian roads and serve Nigerian riders.</p>
+              <p>We established ourselves at the intersection of a critical moment: rising fuel costs, growing environmental awareness, and urgent demand for smarter urban transportation. DPG exists to meet that moment head-on.</p>
               <p>From our showroom on Muhammadu Buhari Way, we serve individual riders, businesses, logistics operators, and institutions seeking to modernize their fleets with clean, cost-effective electric mobility.</p>
             </div>
           </motion.div>
@@ -111,6 +111,27 @@ export default function About() {
                 <p className="text-neutral-500 text-sm leading-relaxed">{v.desc}</p>
               </motion.div>
             ))}
+          </div>
+        </div>
+
+        {/* Local Support */}
+        <div className="mb-24 bg-neutral-50 rounded-3xl p-12 lg:p-16 border border-neutral-100">
+          <Wrench className="w-10 h-10 text-[#1a3a8f] mb-6" />
+          <h2 className="text-3xl md:text-4xl font-black mb-6 max-w-2xl">
+            Local Service, Not Just Sales
+          </h2>
+          <p className="text-neutral-500 leading-relaxed max-w-3xl mb-8">
+            We understand that switching to electric mobility requires trust. That’s why DPG operates a fully-equipped service center alongside our Kano showroom. We don’t just sell scooters—we support them. From routine maintenance to battery diagnostics, our certified technicians are here to ensure your vehicle stays on the road for years to come.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 border-t border-neutral-200">
+            <div>
+              <h4 className="font-bold text-neutral-950 mb-2">Available Spare Parts</h4>
+              <p className="text-sm text-neutral-500">Tyres, brake pads, controllers, and replacement lithium batteries always in stock.</p>
+            </div>
+            <div>
+              <h4 className="font-bold text-neutral-950 mb-2">Expert Technicians</h4>
+              <p className="text-sm text-neutral-500">In-house EV specialists trained to handle diagnostics and repairs quickly.</p>
+            </div>
           </div>
         </div>
 

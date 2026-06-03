@@ -1,7 +1,7 @@
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowRight, Home } from "lucide-react";
-import logoSrc from "@assets/image_1780424986415.png";
+import logoSrc from "@assets/dpg_logo.png";
 
 export default function NotFound() {
   return (
@@ -26,7 +26,7 @@ export default function NotFound() {
       >
         {/* Logo */}
         <Link href="/">
-          <img src={logoSrc} alt="MUNASSAP NIG. LTD." className="h-12 mb-12 opacity-90" />
+          <img src={logoSrc} alt="DPG Enterprises" className="h-12 mb-12 opacity-90" />
         </Link>
 
         {/* 404 number */}
@@ -69,7 +69,7 @@ export default function NotFound() {
 
         {/* Tagline */}
         <p className="mt-14 text-white/20 text-xs font-bold tracking-[0.25em] uppercase">
-          MUNASSAP NIG. LTD. · Go Electric, Go Smart
+          DPG Enterprises · Go Electric, Go Smart
         </p>
       </motion.div>
     </div>

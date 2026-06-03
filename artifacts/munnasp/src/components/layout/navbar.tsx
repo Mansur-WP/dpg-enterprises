@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import logoSrc from "@assets/image_1780424986415.png";
+import logoSrc from "@assets/dpg_logo.png";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
@@ -37,13 +37,16 @@ export function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-10 h-[72px] flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="shrink-0">
+        <Link href="/" className="shrink-0 flex items-center gap-3">
           <img
             src={logoSrc}
-            alt="MUNASSAP NIG. LTD."
-            className="h-9 w-auto"
+            alt="DPG Enterprises"
+            className="h-10 w-auto"
             data-testid="img-logo"
           />
+          <span className={`font-black text-xl tracking-tight ${transparent ? "text-white" : "text-neutral-950"}`}>
+            DPG Enterprises
+          </span>
         </Link>
 
         {/* Desktop nav */}

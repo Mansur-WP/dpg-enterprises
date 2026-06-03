@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import logoSrc from "@assets/image_1780424986415.png";
+import logoSrc from "@assets/dpg_logo.png";
 import { Facebook, Twitter, Instagram, Linkedin, MapPin, Phone } from "lucide-react";
 
 export function Footer() {
@@ -8,7 +8,10 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 pb-16 border-b border-white/10">
           <div className="md:col-span-2">
-            <img src={logoSrc} alt="MUNASSAP NIG. LTD." className="h-10 mb-5" />
+            <div className="flex items-center gap-3 mb-5">
+              <img src={logoSrc} alt="DPG Enterprises" className="h-12" />
+              <span className="font-black text-2xl tracking-tight text-white">DPG Enterprises</span>
+            </div>
             <p className="text-white/40 text-xs font-bold uppercase tracking-[0.2em] mb-4">Go Electric, Go Smart!</p>
             <p className="text-neutral-400 text-sm leading-relaxed max-w-sm">
               Leading Nigeria into a sustainable future with premium electric mobility solutions built for power, style, and efficiency.
@@ -40,14 +43,14 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-[#3aaa35] shrink-0" />
-                <a href="https://wa.me/2349042834479?text=Hello%20MUNASSAP%21%20I%27d%20like%20to%20learn%20more%20about%20your%20electric%20scooters." target="_blank" rel="noopener noreferrer" className="text-neutral-400 text-sm hover:text-white transition-colors">09042834479</a>
+                <a href="https://wa.me/2348059434243?text=Hello%20DPG%21%20I%27d%20like%20to%20learn%20more%20about%20your%20electric%20scooters." target="_blank" rel="noopener noreferrer" className="text-neutral-400 text-sm hover:text-white transition-colors">08059434243</a>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-neutral-500 text-sm">
-          <p>© {new Date().getFullYear()} MUNASSAP NIG. LTD. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} DPG Enterprises All rights reserved.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-white transition-colors">Terms of Service</a>

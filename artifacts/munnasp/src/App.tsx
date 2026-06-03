@@ -1,5 +1,5 @@
-import React from "react";
-import { Switch, Route } from "wouter";
+import React, { useEffect } from "react";
+import { Switch, Route, useLocation } from "wouter";
 import { Navbar } from "./components/layout/navbar";
 import { Footer } from "./components/layout/footer";
 import { WhatsAppButton } from "./components/layout/whatsapp-btn";
@@ -12,9 +12,21 @@ import Contact from "./pages/contact";
 import WhyElectric from "./pages/why-electric";
 import NotFound from "./pages/not-found";
 
+// Component to scroll to the top of the page on route change
+function ScrollToTop() {
+  const [pathname] = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
 function App() {
   return (
     <div className="min-h-screen flex flex-col font-sans text-foreground bg-background">
+      <ScrollToTop />
       <Navbar />
       <main className="flex-grow">
         <Switch>

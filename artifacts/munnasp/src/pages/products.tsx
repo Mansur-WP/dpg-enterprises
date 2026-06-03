@@ -8,12 +8,13 @@ import smartCruiserImg from "@assets/image_1780425014398.png";
 
 const products = [
   {
-    name: "MUNASSAP Urban X",
+    name: "DPG Urban X",
     tagline: "The City Conqueror",
     description:
       "Engineered for urban dominance. The Urban X blends futuristic styling with raw electric performance. Its angular body, intelligent dashboard, and powerful hub motor make it the definitive choice for professionals navigating Nigeria's busiest streets.",
     image: urbanXImg,
     bg: "#eef2ff",
+    price: "₦1,200,000",
     specs: [
       { icon: Gauge, label: "Top Speed", value: "65 km/h" },
       { icon: Zap, label: "Range", value: "80 km" },
@@ -23,12 +24,13 @@ const products = [
     features: ["LED Halo Headlight", "Digital Dashboard", "Anti-Theft Alarm", "USB Charging Port"],
   },
   {
-    name: "MUNASSAP E-Rider Pro",
+    name: "DPG E-Rider Pro",
     tagline: "Classic Reimagined",
     description:
       "A timeless silhouette meets cutting-edge electric technology. The E-Rider Pro preserves the classic scooter aesthetic while delivering a completely silent, zero-emission ride. Ideal for riders who value elegance and efficiency in equal measure.",
     image: eRiderImg,
     bg: "#f5f5f5",
+    price: "₦1,100,000",
     specs: [
       { icon: Gauge, label: "Top Speed", value: "55 km/h" },
       { icon: Zap, label: "Range", value: "60 km" },
@@ -38,12 +40,13 @@ const products = [
     features: ["Classic Chrome Accents", "Comfortable Dual Seat", "Under-Seat Storage", "Disc Brakes"],
   },
   {
-    name: "MUNASSAP City Volt",
+    name: "DPG City Volt",
     tagline: "Maximum Range Champion",
     description:
       "When distance matters, the City Volt delivers. Boasting the highest range in our lineup at 100 km per charge, this model is built for delivery riders, daily commuters, and anyone who refuses to stop short.",
     image: cityVoltImg,
     bg: "#f0fff6",
+    price: "₦750,000",
     specs: [
       { icon: Gauge, label: "Top Speed", value: "70 km/h" },
       { icon: Zap, label: "Range", value: "100 km" },
@@ -53,12 +56,13 @@ const products = [
     features: ["Extended Battery Pack", "Regenerative Braking", "Heavy-Duty Suspension", "Smart App Ready"],
   },
   {
-    name: "MUNASSAP Smart Cruiser",
+    name: "DPG Smart Cruiser",
     tagline: "Stealth and Power",
     description:
       "Matte black finish, aggressive stance, whisper-quiet performance. The Smart Cruiser is for riders who prefer their power understated. A head-turner that lets the ride do the talking.",
     image: smartCruiserImg,
     bg: "#f7f7f7",
+    price: "₦750,000",
     specs: [
       { icon: Gauge, label: "Top Speed", value: "60 km/h" },
       { icon: Zap, label: "Range", value: "75 km" },
@@ -143,11 +147,11 @@ export default function Products() {
               <div className="flex items-center gap-3 mb-6 p-4 rounded-2xl bg-[#f0fff4] border border-[#3aaa35]/20">
                 <span className="text-[#3aaa35] text-lg font-black">₦</span>
                 <div>
-                  <div className="font-bold text-neutral-950 text-sm">Contact for Pricing</div>
-                  <div className="text-neutral-400 text-xs mt-0.5">Call or WhatsApp us for the best available price</div>
+                  <div className="font-bold text-neutral-950 text-sm">{p.price.replace('₦', '')}</div>
+                  <div className="text-neutral-400 text-xs mt-0.5">Contact us for exact pricing and availability</div>
                 </div>
                 <a
-                  href="https://wa.me/2349042834479?text=Hello%20MUNASSAP%21%20I%27d%20like%20to%20know%20the%20price%20of%20the%20electric%20scooter."
+                  href={`https://wa.me/2348059434243?text=Hello%20DPG%21%20I%27d%20like%20to%20know%20the%20exact%20price%20of%20the%20${encodeURIComponent(p.name)}.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="ml-auto shrink-0 text-xs font-bold text-[#3aaa35] underline underline-offset-2 hover:text-[#2d8828] transition-colors"
@@ -156,18 +160,68 @@ export default function Products() {
                 </a>
               </div>
 
-              <Link
-                href="/contact"
-                data-testid={`button-quote-${i}`}
-                className="inline-flex items-center gap-2 bg-[#1a3a8f] text-white font-semibold text-sm px-7 py-3.5 rounded-full hover:bg-[#152f78] transition-all w-fit group"
-              >
-                Request a Quote
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-              </Link>
+              <div className="flex flex-wrap gap-3">
+                <Link
+                  href="/contact"
+                  data-testid={`button-quote-${i}`}
+                  className="inline-flex items-center gap-2 bg-[#1a3a8f] text-white font-semibold text-sm px-6 py-3.5 rounded-full hover:bg-[#152f78] transition-all w-fit group"
+                >
+                  Request a Quote
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                </Link>
+                <a
+                  href={`https://wa.me/2348059434243?text=Hello%20DPG%21%20I%27d%20like%20to%20book%20a%20test%20ride%20for%20the%20${encodeURIComponent(p.name)}.`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-[#3aaa35] text-white font-semibold text-sm px-6 py-3.5 rounded-full hover:bg-[#2d8828] transition-all w-fit"
+                >
+                  Book Test Ride
+                </a>
+              </div>
             </div>
           </motion.div>
         ))}
       </div>
+
+      {/* ─── AFTER-SALES SUPPORT ─── */}
+      <section className="py-24 px-6 bg-neutral-50 border-y border-neutral-100">
+        <div className="max-w-5xl mx-auto text-center">
+          <p className="text-[#3aaa35] text-xs font-bold tracking-[0.2em] uppercase mb-4">Peace of Mind</p>
+          <h2 className="text-4xl md:text-5xl font-black mb-12">After-Sales Support & Warranty</h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+            <div className="bg-white p-8 rounded-3xl shadow-sm border border-neutral-100">
+              <div className="w-12 h-12 bg-[#f0fff4] rounded-2xl flex items-center justify-center mb-6">
+                <Zap className="w-6 h-6 text-[#3aaa35]" />
+              </div>
+              <h3 className="font-bold text-xl mb-3">1-Year Warranty</h3>
+              <p className="text-neutral-500 text-sm leading-relaxed">
+                Every DPG electric scooter comes with a comprehensive 1-year warranty covering the motor, battery, and core electronic components. Ride with confidence.
+              </p>
+            </div>
+
+            <div className="bg-white p-8 rounded-3xl shadow-sm border border-neutral-100">
+              <div className="w-12 h-12 bg-[#eef2ff] rounded-2xl flex items-center justify-center mb-6">
+                <Clock className="w-6 h-6 text-[#1a3a8f]" />
+              </div>
+              <h3 className="font-bold text-xl mb-3">Local Spare Parts</h3>
+              <p className="text-neutral-500 text-sm leading-relaxed">
+                No waiting months for imported parts. We stock batteries, tyres, brake pads, and body panels right here in Kano.
+              </p>
+            </div>
+
+            <div className="bg-white p-8 rounded-3xl shadow-sm border border-neutral-100">
+              <div className="w-12 h-12 bg-[#f5f5f5] rounded-2xl flex items-center justify-center mb-6">
+                <Gauge className="w-6 h-6 text-neutral-700" />
+              </div>
+              <h3 className="font-bold text-xl mb-3">Expert Technicians</h3>
+              <p className="text-neutral-500 text-sm leading-relaxed">
+                Our in-house mechanics are specifically trained on electric vehicle systems. Fast diagnostics, reliable repairs, and regular maintenance checks.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* CTA */}
       <div className="bg-neutral-950 py-24 text-center px-6">

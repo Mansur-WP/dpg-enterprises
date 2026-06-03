@@ -13,14 +13,43 @@ type FormState = {
 export default function Contact() {
   const [form, setForm] = useState<FormState>({ name: "", phone: "", email: "", subject: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          // TODO: Replace with your actual Web3Forms Access Key
+          access_key: "96ef743f-0df5-4729-8aab-7527b7e7191e",
+          from_name: "DPG Enterprises Contact Form",
+          subject: `New Inquiry: ${form.subject}`,
+          ...form,
+        }),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setSubmitted(true);
+      } else {
+        alert("Something went wrong. Please try again or contact us via WhatsApp.");
+      }
+    } catch (error) {
+      alert("Failed to send message. Please check your internet connection.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -46,7 +75,7 @@ export default function Contact() {
           style={{ height: "360px" }}
         >
           <iframe
-            title="MUNASSAP NIG. LTD. Showroom Location"
+            title="DPG Enterprises Showroom Location"
             width="100%"
             height="100%"
             frameBorder="0"
@@ -67,7 +96,7 @@ export default function Contact() {
           {/* Info */}
           <div className="lg:col-span-2 space-y-0">
             {[
-              { icon: Phone, label: "Phone", value: "09042834479", sub: "Tap to call or WhatsApp us", href: "https://wa.me/2349042834479?text=Hello%20MUNASSAP%21%20I%27d%20like%20to%20learn%20more%20about%20your%20electric%20scooters." },
+              { icon: Phone, label: "Phone", value: "08059434243", sub: "Tap to call or WhatsApp us", href: "https://wa.me/2348059434243?text=Hello%20DPG%21%20I%27d%20like%20to%20learn%20more%20about%20your%20electric%20scooters." },
               { icon: MapPin, label: "Showroom", value: "Muhammadu Buhari Way", sub: "Along Kofar Kabuga – Kofar Ruwa Road, Kano State, Nigeria", href: "https://maps.google.com/?q=Muhammadu+Buhari+Way+Kano+Nigeria" },
               { icon: Clock, label: "Business Hours", value: "Mon – Sat: 8:00 AM – 6:00 PM", sub: "Sunday: 10:00 AM – 3:00 PM", href: null },
             ].map((item, i) => (
@@ -102,7 +131,7 @@ export default function Contact() {
               className="border-t border-neutral-100 pt-8"
             >
               <a
-                href="https://wa.me/2349042834479?text=Hello%20MUNASSAP%21%20I%27d%20like%20to%20learn%20more%20about%20your%20electric%20scooters."
+                href="https://wa.me/2348059434243?text=Hello%20DPG%21%20I%27d%20like%20to%20learn%20more%20about%20your%20electric%20scooters."
                 target="_blank"
                 rel="noopener noreferrer"
                 data-testid="button-whatsapp"
@@ -191,11 +220,12 @@ export default function Contact() {
 
                   <button
                     type="submit"
+                    disabled={isSubmitting}
                     data-testid="button-submit"
-                    className="w-full inline-flex items-center justify-center gap-2 bg-[#1a3a8f] text-white font-semibold text-sm px-7 py-4 rounded-xl hover:bg-[#152f78] transition-all group"
+                    className="w-full inline-flex items-center justify-center gap-2 bg-[#1a3a8f] text-white font-semibold text-sm px-7 py-4 rounded-xl hover:bg-[#152f78] transition-all group disabled:opacity-70 disabled:cursor-not-allowed"
                   >
-                    Send Message
-                    <Send className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                    {isSubmitting ? "Sending..." : "Send Message"}
+                    {!isSubmitting && <Send className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />}
                   </button>
                 </form>
               </>

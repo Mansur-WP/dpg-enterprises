@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowRight, Zap, Leaf, Shield, BarChart3, BatteryCharging, Cpu, MapPin, Phone } from "lucide-react";
+import { ArrowRight, Zap, Leaf, Shield, BarChart3, BatteryCharging, Cpu, MapPin, Phone, Fuel } from "lucide-react";
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "../components/ui/accordion";
 import showroomImg from "@assets/image_1780425029747.png";
 import urbanXImg from "@assets/image_1780425003258.png";
 import eRiderImg from "@assets/image_1780425006540.png";
@@ -19,9 +20,35 @@ const reasons = [
   { icon: Leaf, title: "Zero Emissions", desc: "No exhaust, no guilt. Every ride is a vote for cleaner Nigerian cities." },
   { icon: BarChart3, title: "80% Lower Running Cost", desc: "Electricity costs a fraction of petrol. Charge overnight, ride all day." },
   { icon: BatteryCharging, title: "Advanced Battery Tech", desc: "Lithium-ion cells engineered for Nigeria's heat, dust, and daily demand." },
-  { icon: Shield, title: "Built to Last", desc: "Rigorous quality checks. Every MUNASSAP leaves our showroom ready to perform." },
+  { icon: Shield, title: "Built to Last", desc: "Rigorous quality checks. Every DPG leaves our showroom ready to perform." },
   { icon: Cpu, title: "Smart Features", desc: "Digital displays, anti-theft alarms, and smart charging in every model." },
   { icon: Zap, title: "Instant Torque", desc: "Electric motors deliver full power the moment you twist the throttle." },
+];
+
+const comparisons = [
+  { topic: "Fuel Cost", petrol: "₦35,000 – ₦50,000 / month", electric: "₦3,000 – ₦5,000 / month" },
+  { topic: "Maintenance", petrol: "Engine oil, spark plugs...", electric: "Tyres, brakes — almost nothing else" },
+  { topic: "Noise", petrol: "Loud exhaust — noise pollution", electric: "Near-silent. Smooth and quiet." },
+  { topic: "Emissions", petrol: "CO₂, carbon monoxide every ride", electric: "Zero tail-pipe emissions" },
+];
+
+const faqs = [
+  {
+    q: "How do I charge it when there is no light (power outage)?",
+    a: "Our scooters come with removable batteries. You can detach the battery and charge it indoors using a generator, solar inverter, or standard wall socket. It uses very little electricity."
+  },
+  {
+    q: "Are spare parts available in Nigeria?",
+    a: "Yes! We stock all essential spare parts (tyres, brake pads, batteries, controllers) at our Kano showroom. Our local technicians are always ready to help."
+  },
+  {
+    q: "Do I need a special license to ride?",
+    a: "No special license is required beyond a standard motorcycle riding permit. Our bikes are classified as standard two-wheelers under Nigerian traffic laws."
+  },
+  {
+    q: "What happens if I ride it in the rain?",
+    a: "DPG electric scooters are IP65 water-resistant. The battery and motor are fully sealed, so riding through typical rain and small puddles is completely safe."
+  }
 ];
 
 export default function Home() {
@@ -33,7 +60,7 @@ export default function Home() {
         {/* Background photo */}
         <img
           src={showroomImg}
-          alt="MUNASSAP Showroom"
+          alt="DPG Showroom"
           className="absolute inset-0 w-full h-full object-cover object-center scale-105"
           style={{ filter: "brightness(0.45)" }}
         />
@@ -96,6 +123,14 @@ export default function Home() {
               Explore All Models
               <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
             </Link>
+            <a
+              href="https://wa.me/2348059434243?text=Hello%20DPG%21%20I%27d%20like%20to%20book%20a%20test%20ride%20at%20your%20showroom."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#3aaa35] text-white font-bold text-sm px-8 py-4 rounded-full hover:bg-[#2d8828] transition-all shadow-lg shadow-[#3aaa35]/20"
+            >
+              Book a Test Ride
+            </a>
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 border border-white/35 text-white font-semibold text-sm px-8 py-4 rounded-full hover:border-white/65 hover:bg-white/8 transition-all backdrop-blur-sm"
@@ -157,7 +192,7 @@ export default function Home() {
                 <span className="w-5 h-px bg-[#3aaa35]" /> Flagship Model
               </p>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-5">
-                MUNASSAP<br />Urban X
+                DPG<br />Urban X
               </h2>
               <p className="text-neutral-400 text-base leading-relaxed mb-8 max-w-md">
                 Engineered for urban dominance. Futuristic styling meets real-world performance — the definitive choice for Nigeria's modern city rider.
@@ -200,7 +235,7 @@ export default function Home() {
               <div className="relative aspect-square flex items-center justify-center">
                 <img
                   src={urbanXImg}
-                  alt="MUNASSAP Urban X"
+                  alt="DPG Urban X"
                   className="w-5/6 h-5/6 object-contain relative z-10"
                   style={{
                     maskImage: "radial-gradient(ellipse 80% 78% at 50% 52%, black 40%, rgba(0,0,0,0.8) 58%, transparent 76%)",
@@ -284,7 +319,7 @@ export default function Home() {
                 </div>
                 <div className="px-1">
                   <p className="text-neutral-400 text-xs font-medium uppercase tracking-wider mb-1">{p.tagline}</p>
-                  <h3 className="font-bold text-neutral-950 text-base mb-2">MUNASSAP {p.name}</h3>
+                  <h3 className="font-bold text-neutral-950 text-base mb-2">DPG {p.name}</h3>
                   <div className="flex gap-4 text-sm text-neutral-500">
                     <span><strong className="text-neutral-950">{p.range}</strong> range</span>
                     <span><strong className="text-neutral-950">{p.speed}</strong> top</span>
@@ -296,7 +331,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── WHY MUNASSAP ─── */}
+      {/* ─── WHY DPG ─── */}
       <section className="py-28 px-6 bg-neutral-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
@@ -333,10 +368,10 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
             {
-              quote: "I was spending over ₦40,000 a month on fuel. Since switching to MUNASSAP, I spend less than ₦4,000 on charging. The savings paid for most of the bike in the first year.",
-              name: "Abdullahi Musa",
-              role: "Daily Commuter, Kano",
-              initial: "A",
+              quote: "I was spending over ₦40,000 a month on fuel. Since switching to DPG, I spend less than ₦4,000 on charging. The savings paid for most of the bike in the first year.",
+              name: "Mansur Nasir",
+              role: "Student, NWU Kano",
+              initial: "M",
               color: "#1a3a8f",
             },
             {
@@ -347,7 +382,7 @@ export default function Home() {
               color: "#3aaa35",
             },
             {
-              quote: "As a delivery rider, running costs are everything. MUNASSAP cut my expenses dramatically. The team at the showroom were very helpful with the right model for my routes.",
+              quote: "As a delivery rider, running costs are everything. DPG cut my expenses dramatically. The team at the showroom were very helpful with the right model for my routes.",
               name: "Yakubu Danladi",
               role: "Delivery Rider, Kano",
               initial: "Y",
@@ -394,6 +429,71 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ─── COMPARISON TABLE (Moved to Home) ─── */}
+      <section className="py-24 px-6 bg-neutral-50">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-16">
+            <p className="text-[#3aaa35] text-xs font-bold tracking-[0.2em] uppercase mb-3">Head to Head</p>
+            <h2 className="text-4xl md:text-5xl font-black">Petrol vs Electric</h2>
+          </div>
+
+          <div className="rounded-3xl overflow-hidden border border-neutral-100 shadow-sm">
+            {/* Header row */}
+            <div className="grid grid-cols-3 bg-neutral-950 text-white">
+              <div className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-neutral-400">Category</div>
+              <div className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-neutral-400 border-l border-white/10">
+                <div className="flex items-center gap-2">
+                  <Fuel className="w-4 h-4 text-red-400" /> Petrol Bike
+                </div>
+              </div>
+              <div className="px-6 py-4 text-xs font-bold uppercase tracking-wider border-l border-white/10">
+                <div className="flex items-center gap-2 text-[#3aaa35]">
+                  <Zap className="w-4 h-4" /> DPG Electric
+                </div>
+              </div>
+            </div>
+
+            {comparisons.map((row, i) => (
+              <motion.div
+                key={row.topic}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.07, duration: 0.4 }}
+                className={`grid grid-cols-3 border-t border-neutral-100 ${i % 2 === 0 ? "bg-white" : "bg-neutral-50/60"}`}
+              >
+                <div className="px-6 py-5 font-semibold text-sm text-neutral-700">{row.topic}</div>
+                <div className="px-6 py-5 text-sm text-neutral-500 border-l border-neutral-100">{row.petrol}</div>
+                <div className="px-6 py-5 text-sm font-semibold text-[#1a3a8f] border-l border-neutral-100 flex items-start gap-2">
+                  <span className="text-[#3aaa35] mt-0.5 shrink-0">✓</span>
+                  {row.electric}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── FAQ SECTION ─── */}
+      <section className="py-24 px-6 max-w-4xl mx-auto">
+        <div className="text-center mb-16">
+          <p className="text-[#3aaa35] text-xs font-bold tracking-[0.2em] uppercase mb-3">Got Questions?</p>
+          <h2 className="text-4xl md:text-5xl font-black">Frequently Asked Questions</h2>
+        </div>
+        <Accordion type="single" collapsible className="w-full">
+          {faqs.map((faq, i) => (
+            <AccordionItem key={i} value={`item-${i}`} className="border-b border-neutral-100 py-2">
+              <AccordionTrigger className="text-left font-bold text-lg hover:text-[#1a3a8f]">
+                {faq.q}
+              </AccordionTrigger>
+              <AccordionContent className="text-neutral-500 text-base leading-relaxed">
+                {faq.a}
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+      </section>
+
       {/* ─── DETAIL SHOT ─── */}
       <section className="relative h-[55vh] overflow-hidden">
         <img src={detailImg} alt="Electric bike detail" className="w-full h-full object-cover object-center" style={{ filter: "brightness(0.55)" }} />
@@ -419,11 +519,19 @@ export default function Home() {
             Visit our showroom on Muhammadu Buhari Way, Kano. Talk to our team and take your first electric ride.
           </p>
           <div className="flex flex-wrap gap-4 justify-center mb-10">
+            <a
+              href="https://wa.me/2348059434243?text=Hello%20DPG%21%20I%27d%20like%20to%20book%20a%20test%20ride%20at%20your%20showroom."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#3aaa35] text-white font-bold text-sm px-8 py-4 rounded-full hover:bg-[#2d8828] transition-all shadow-lg shadow-[#3aaa35]/20"
+            >
+              Book a Test Ride
+            </a>
             <Link
-              href="/contact"
+              href="/products"
               className="inline-flex items-center gap-2 bg-[#1a3a8f] text-white font-bold text-sm px-8 py-4 rounded-full hover:bg-[#152f78] transition-all group"
             >
-              Get in Touch <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+              See All Models <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
             </Link>
             <Link
               href="/why-electric"
@@ -435,8 +543,8 @@ export default function Home() {
 
           {/* Quick contact links */}
           <div className="flex flex-wrap justify-center gap-6 text-sm text-neutral-500">
-            <a href="https://wa.me/2349042834479?text=Hello%20MUNASSAP%21%20I%27d%20like%20to%20learn%20more%20about%20your%20electric%20scooters." target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-neutral-900 transition-colors">
-              <Phone className="w-4 h-4" /> 09042834479
+            <a href="https://wa.me/2348059434243?text=Hello%20DPG%21%20I%27d%20like%20to%20learn%20more%20about%20your%20electric%20scooters." target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-neutral-900 transition-colors">
+              <Phone className="w-4 h-4" /> 08059434243
             </a>
             <span className="inline-flex items-center gap-2">
               <MapPin className="w-4 h-4" /> Muhammadu Buhari Way, Kano
