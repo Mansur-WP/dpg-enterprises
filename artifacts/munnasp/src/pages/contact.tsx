@@ -31,7 +31,6 @@ export default function Contact() {
           Accept: "application/json",
         },
         body: JSON.stringify({
-          // TODO: Replace with your actual Web3Forms Access Key
           access_key: "96ef743f-0df5-4729-8aab-7527b7e7191e",
           from_name: "DPG Enterprises Contact Form",
           subject: `New Inquiry: ${form.subject}`,
