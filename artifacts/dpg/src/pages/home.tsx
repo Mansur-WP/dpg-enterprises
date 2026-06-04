@@ -51,9 +51,17 @@ const faqs = [
   }
 ];
 
+import SEO from "../components/seo";
+
 export default function Home() {
   return (
     <div className="bg-white text-neutral-950 overflow-x-hidden">
+      <SEO
+        title="Premium Electric Scooters in Kano, Nigeria"
+        description="DPG Enterprises — Nigeria's leading electric scooter brand. Save 80% on fuel costs with premium electric mobility solutions. Explore models starting at ₦750,000. Visit our showroom in Kano."
+        path="/"
+        keywords="DPG Enterprises, electric scooters Nigeria, electric bikes Kano, buy electric scooter Nigeria, DPG Urban X, fuel savings Nigeria, electric mobility Kano"
+      />
 
       {/* ─── HERO: Full-bleed photo, centered headline — NIU/Gogoro style ─── */}
       <section className="relative h-screen min-h-[600px] w-full overflow-hidden flex flex-col items-center justify-center text-center">

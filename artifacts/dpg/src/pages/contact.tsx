@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { MapPin, Phone, Clock, MessageSquare, Send, CheckCircle } from "lucide-react";
+import SEO from "../components/seo";
 
 type FormState = {
   name: string;
@@ -53,6 +54,12 @@ export default function Contact() {
 
   return (
     <div className="bg-white min-h-screen text-neutral-950">
+      <SEO
+        title="Contact Us — Visit Our Showroom or Schedule a Test Ride"
+        description="Get in touch with DPG Enterprises in Kano, Nigeria. Visit our showroom on Muhammadu Buhari Way, chat on WhatsApp, or fill out our contact form. Schedule a test ride today."
+        path="/contact"
+        keywords="contact DPG Enterprises, DPG showroom Kano, test ride electric scooter Nigeria, DPG phone number, electric scooter dealer Kano"
+      />
 
       <div className="pt-32 pb-16 px-6 max-w-7xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>

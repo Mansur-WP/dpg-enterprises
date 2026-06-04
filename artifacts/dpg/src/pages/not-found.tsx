@@ -3,12 +3,19 @@ import { motion } from "framer-motion";
 import { ArrowRight, Home } from "lucide-react";
 import logoSrc from "@assets/dpg_logo.png";
 
+import SEO from "../components/seo";
+
 export default function NotFound() {
   return (
     <div
       className="min-h-screen w-full flex flex-col items-center justify-center px-6 text-center"
       style={{ background: "linear-gradient(135deg, #04071a 0%, #08142e 100%)" }}
     >
+      <SEO
+        title="Page Not Found (404)"
+        description="The page you are looking for does not exist. Return to DPG Enterprises home page."
+        path="/404"
+      />
       {/* Ambient glow */}
       <div
         className="absolute inset-0 pointer-events-none"

@@ -13,9 +13,17 @@ const values = [
   { title: "Vision", desc: "We see a Nigeria where electric mobility is accessible, affordable, and aspirational. That's not a dream — it's our roadmap." },
 ];
 
+import SEO from "../components/seo";
+
 export default function About() {
   return (
     <div className="bg-white text-neutral-950 min-h-screen">
+      <SEO
+        title="About Us — Nigeria's Electric Mobility Pioneer"
+        description="Learn about DPG Enterprises, headquartered in Kano, Nigeria. We source, distribute, and support premium electric scooters built for Nigerian roads. Discover our mission, vision, and values."
+        path="/about"
+        keywords="about DPG Enterprises, electric mobility Nigeria, DPG Kano showroom, Nigerian electric scooter company, DPG mission vision"
+      />
 
       {/* Hero */}
       <div className="pt-32 pb-24 px-6 max-w-7xl mx-auto">

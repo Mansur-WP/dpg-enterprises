@@ -73,9 +73,17 @@ const products = [
   },
 ];
 
+import SEO from "../components/seo";
+
 export default function Products() {
   return (
     <div className="bg-white text-neutral-950 min-h-screen">
+      <SEO
+        title="Electric Scooter Models — Urban X, E-Rider Pro, City Volt & More"
+        description="Browse DPG Enterprises' full electric scooter lineup. Compare specs, pricing from ₦750,000, and features of the DPG Urban X, E-Rider Pro, City Volt, and Smart Cruiser. Available in Kano, Nigeria."
+        path="/products"
+        keywords="DPG Urban X, DPG E-Rider Pro, DPG City Volt, DPG Smart Cruiser, electric scooter models Nigeria, buy electric scooter Kano, electric bike price Nigeria"
+      />
       {/* Header */}
       <div className="pt-32 pb-20 px-6 max-w-7xl mx-auto">
         <motion.div

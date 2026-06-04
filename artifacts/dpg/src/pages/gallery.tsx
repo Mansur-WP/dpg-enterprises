@@ -17,11 +17,19 @@ const items = [
   { src: img4, alt: "DPG Smart Cruiser", caption: "DPG Smart Cruiser — Stealth and Power", span: "" },
 ];
 
+import SEO from "../components/seo";
+
 export default function Gallery() {
   const [lightbox, setLightbox] = useState<{ src: string; caption: string } | null>(null);
 
   return (
     <div className="bg-white min-h-screen">
+      <SEO
+        title="Gallery — See Our Electric Scooters & Showroom"
+        description="Browse photos of DPG Enterprises' electric scooter lineup and our Kano showroom. See the DPG Urban X, E-Rider Pro, City Volt, and Smart Cruiser up close."
+        path="/gallery"
+        keywords="DPG electric scooter photos, DPG showroom Kano, electric scooter gallery Nigeria, DPG Urban X images"
+      />
       <div className="pt-32 pb-16 px-6 max-w-7xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
           <p className="text-[#3aaa35] text-xs font-bold tracking-[0.2em] uppercase mb-3">Showroom</p>

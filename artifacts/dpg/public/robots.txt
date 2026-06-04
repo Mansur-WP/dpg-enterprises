@@ -1,2 +1,10 @@
+# ══════════════════════════════════════════════════════════════
+# DPG Enterprises — robots.txt
+# https://dpg-enterprises.vercel.app
+# ══════════════════════════════════════════════════════════════
+
 User-agent: *
 Allow: /
+
+# Sitemap location
+Sitemap: https://dpg-enterprises.vercel.app/sitemap.xml

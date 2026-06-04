@@ -81,9 +81,17 @@ const nigeriaReasons = [
   },
 ];
 
+import SEO from "../components/seo";
+
 export default function WhyElectric() {
   return (
     <div className="bg-white text-neutral-950 overflow-x-hidden">
+      <SEO
+        title="Why Go Electric — Save 80% on Fuel Costs in Nigeria"
+        description="Discover why thousands of Nigerians are switching to electric scooters. Compare petrol vs electric costs, learn about battery technology, and see how DPG electric bikes save you ₦378,000+ per year."
+        path="/why-electric"
+        keywords="why electric scooter Nigeria, petrol vs electric bike, fuel savings Nigeria, electric vehicle benefits, DPG electric scooter advantages, green transportation Kano"
+      />
 
       {/* ─── HERO ─── */}
       <section
