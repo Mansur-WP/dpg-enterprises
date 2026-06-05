@@ -11,65 +11,73 @@ const products = [
     name: "DPG Urban X",
     tagline: "The City Conqueror",
     description:
-      "Engineered for urban dominance. The Urban X blends futuristic styling with raw electric performance. Its angular body, intelligent dashboard, and powerful hub motor make it the definitive choice for professionals navigating Nigeria's busiest streets.",
+      "Engineered for urban dominance. The Urban X blends futuristic styling with raw electric performance. Its angular body, intelligent dashboard, and powerful hub motor make it the definitive choice for professionals navigating Nigeria's busiest streets. Built for speed, built for style, built to dominate.",
     image: urbanXImg,
     bg: "#eef2ff",
     price: "₦1,200,000",
+    ideal: "City professionals, speed enthusiasts, delivery riders",
+    warranty: "2 years",
     specs: [
       { icon: Gauge, label: "Top Speed", value: "65 km/h" },
       { icon: Zap, label: "Range", value: "80 km" },
-      { icon: Battery, label: "Battery", value: "72V 32Ah" },
+      { icon: Battery, label: "Battery", value: "72V 32Ah LiPo" },
       { icon: Clock, label: "Charge Time", value: "6–8 hrs" },
     ],
-    features: ["LED Halo Headlight", "Digital Dashboard", "Anti-Theft Alarm", "USB Charging Port"],
+    features: ["LED Halo Headlight", "Digital Dashboard Display", "Anti-Theft Alarm System", "USB Charging Port", "Dual Disc Brakes", "IP65 Water Resistant"],
   },
   {
     name: "DPG E-Rider Pro",
     tagline: "Classic Reimagined",
     description:
-      "A timeless silhouette meets cutting-edge electric technology. The E-Rider Pro preserves the classic scooter aesthetic while delivering a completely silent, zero-emission ride. Ideal for riders who value elegance and efficiency in equal measure.",
+      "A timeless silhouette meets cutting-edge electric technology. The E-Rider Pro preserves the classic scooter aesthetic while delivering a completely silent, zero-emission ride. Ideal for riders who value elegance and efficiency in equal measure. Experience luxury meets sustainability.",
     image: eRiderImg,
     bg: "#f5f5f5",
     price: "₦1,100,000",
+    ideal: "Commuters, leisure riders, family use",
+    warranty: "2 years",
     specs: [
       { icon: Gauge, label: "Top Speed", value: "55 km/h" },
       { icon: Zap, label: "Range", value: "60 km" },
-      { icon: Battery, label: "Battery", value: "60V 20Ah" },
+      { icon: Battery, label: "Battery", value: "60V 20Ah LiPo" },
       { icon: Clock, label: "Charge Time", value: "4–6 hrs" },
     ],
-    features: ["Classic Chrome Accents", "Comfortable Dual Seat", "Under-Seat Storage", "Disc Brakes"],
+    features: ["Classic Chrome Accents", "Comfortable Dual Seat", "Under-Seat Storage Box", "Disc Brakes System", "Removable Battery", "Phone Mount"],
   },
   {
     name: "DPG City Volt",
     tagline: "Maximum Range Champion",
     description:
-      "When distance matters, the City Volt delivers. Boasting the highest range in our lineup at 100 km per charge, this model is built for delivery riders, daily commuters, and anyone who refuses to stop short.",
+      "When distance matters, the City Volt delivers. Boasting the highest range in our lineup at 100 km per charge, this model is built for delivery riders, daily commuters, and anyone who refuses to stop short. The ultimate endurance machine.",
     image: cityVoltImg,
     bg: "#f0fff6",
     price: "₦750,000",
+    ideal: "Delivery operators, long-distance commuters, fleet use",
+    warranty: "18 months",
     specs: [
       { icon: Gauge, label: "Top Speed", value: "70 km/h" },
       { icon: Zap, label: "Range", value: "100 km" },
-      { icon: Battery, label: "Battery", value: "72V 40Ah" },
+      { icon: Battery, label: "Battery", value: "72V 40Ah Extended" },
       { icon: Clock, label: "Charge Time", value: "8 hrs" },
     ],
-    features: ["Extended Battery Pack", "Regenerative Braking", "Heavy-Duty Suspension", "Smart App Ready"],
+    features: ["Extended Battery Pack", "Regenerative Braking", "Heavy-Duty Suspension", "Smart App Integration", "Cargo Rack Ready", "All-Weather Capable"],
   },
   {
     name: "DPG Smart Cruiser",
     tagline: "Stealth and Power",
     description:
-      "Matte black finish, aggressive stance, whisper-quiet performance. The Smart Cruiser is for riders who prefer their power understated. A head-turner that lets the ride do the talking.",
+      "Matte black finish, aggressive stance, whisper-quiet performance. The Smart Cruiser is for riders who prefer their power understated. A head-turner that lets the ride do the talking. Pure performance, zero noise.",
     image: smartCruiserImg,
     bg: "#f7f7f7",
     price: "₦750,000",
+    ideal: "Urban riders, night commuters, enthusiasts",
+    warranty: "18 months",
     specs: [
       { icon: Gauge, label: "Top Speed", value: "60 km/h" },
       { icon: Zap, label: "Range", value: "75 km" },
-      { icon: Battery, label: "Battery", value: "60V 28Ah" },
+      { icon: Battery, label: "Battery", value: "60V 28Ah LiPo" },
       { icon: Clock, label: "Charge Time", value: "5–7 hrs" },
     ],
-    features: ["Matte Stealth Finish", "Keyless Ignition", "Hydraulic Shock Absorbers", "Integrated Tail Box"],
+    features: ["Matte Stealth Finish", "Keyless Ignition System", "Hydraulic Shock Absorbers", "Integrated Tail Box", "LED Light Package", "Sport Mode"],
   },
 ];
 
@@ -191,41 +199,116 @@ export default function Products() {
         ))}
       </div>
 
+      {/* ─── PRODUCT COMPARISON TABLE ─── */}
+      <section className="py-24 px-6 bg-white border-y border-neutral-100">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <p className="text-[#3aaa35] text-xs font-bold tracking-[0.2em] uppercase mb-4">Head-to-Head</p>
+            <h2 className="text-4xl md:text-5xl font-black mb-6">Compare All Models</h2>
+          </motion.div>
+
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse">
+              <thead>
+                <tr className="border-b-2 border-neutral-200">
+                  <th className="text-left py-4 px-4 font-bold text-neutral-950">Feature</th>
+                  {products.map((p) => (
+                    <th key={p.name} className="text-center py-4 px-4 font-bold text-neutral-950">{p.name}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  { label: "Price", values: products.map(p => p.price) },
+                  { label: "Top Speed", values: products.map(p => p.specs[0].value) },
+                  { label: "Range", values: products.map(p => p.specs[1].value) },
+                  { label: "Battery", values: products.map(p => p.specs[2].value) },
+                  { label: "Charge Time", values: products.map(p => p.specs[3].value) },
+                  { label: "Warranty", values: products.map(p => p.warranty) },
+                  { label: "Ideal For", values: products.map(p => p.ideal) },
+                ].map((row, i) => (
+                  <tr key={row.label} className={`border-b border-neutral-100 ${i % 2 === 0 ? 'bg-neutral-50' : ''}`}>
+                    <td className="py-4 px-4 font-semibold text-neutral-950">{row.label}</td>
+                    {row.values.map((value, j) => (
+                      <td key={j} className="text-center py-4 px-4 text-neutral-600 text-sm">{value}</td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
       {/* ─── AFTER-SALES SUPPORT ─── */}
       <section className="py-24 px-6 bg-neutral-50 border-y border-neutral-100">
         <div className="max-w-5xl mx-auto text-center">
           <p className="text-[#3aaa35] text-xs font-bold tracking-[0.2em] uppercase mb-4">Peace of Mind</p>
           <h2 className="text-4xl md:text-5xl font-black mb-12">After-Sales Support & Warranty</h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-            <div className="bg-white p-8 rounded-3xl shadow-sm border border-neutral-100">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-white p-8 rounded-3xl shadow-sm border border-neutral-100"
+            >
               <div className="w-12 h-12 bg-[#f0fff4] rounded-2xl flex items-center justify-center mb-6">
                 <Zap className="w-6 h-6 text-[#3aaa35]" />
               </div>
-              <h3 className="font-bold text-xl mb-3">1-Year Warranty</h3>
+              <h3 className="font-bold text-xl mb-3">Extended Warranty</h3>
               <p className="text-neutral-500 text-sm leading-relaxed">
-                Every DPG electric scooter comes with a comprehensive 1-year warranty covering the motor, battery, and core electronic components. Ride with confidence.
+                Up to 2-year warranty on select models covering motor, battery, and core electronic components. Your investment is protected.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="bg-white p-8 rounded-3xl shadow-sm border border-neutral-100">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="bg-white p-8 rounded-3xl shadow-sm border border-neutral-100"
+            >
               <div className="w-12 h-12 bg-[#eef2ff] rounded-2xl flex items-center justify-center mb-6">
                 <Clock className="w-6 h-6 text-[#1a3a8f]" />
               </div>
-              <h3 className="font-bold text-xl mb-3">Local Spare Parts</h3>
+              <h3 className="font-bold text-xl mb-3">Local Spare Parts Stock</h3>
               <p className="text-neutral-500 text-sm leading-relaxed">
-                No waiting months for imported parts. We stock batteries, tyres, brake pads, and body panels right here in Kano.
+                No delays. We stock batteries, tyres, brake pads, controllers, and body panels at our Kano showroom. Get parts today.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="bg-white p-8 rounded-3xl shadow-sm border border-neutral-100">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="bg-white p-8 rounded-3xl shadow-sm border border-neutral-100"
+            >
               <div className="w-12 h-12 bg-[#f5f5f5] rounded-2xl flex items-center justify-center mb-6">
                 <Gauge className="w-6 h-6 text-neutral-700" />
               </div>
-              <h3 className="font-bold text-xl mb-3">Expert Technicians</h3>
+              <h3 className="font-bold text-xl mb-3">Expert EV Technicians</h3>
               <p className="text-neutral-500 text-sm leading-relaxed">
-                Our in-house mechanics are specifically trained on electric vehicle systems. Fast diagnostics, reliable repairs, and regular maintenance checks.
+                Certified mechanics trained on electric systems. Fast diagnostics, reliable repairs, and preventative maintenance plans available.
               </p>
+            </motion.div>
+          </div>
+
+          {/* Additional support features */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-white p-6 rounded-2xl border border-neutral-100">
+              <h4 className="font-bold text-neutral-950 mb-2">Free Maintenance (Year 1)</h4>
+              <p className="text-sm text-neutral-500">Regular checks, battery health monitoring, and software updates included in warranty period.</p>
+            </div>
+            <div className="bg-white p-6 rounded-2xl border border-neutral-100">
+              <h4 className="font-bold text-neutral-950 mb-2">24/7 Support Line</h4>
+              <p className="text-sm text-neutral-500">WhatsApp support, roadside assistance, and emergency repair coordination always available.</p>
             </div>
           </div>
         </div>

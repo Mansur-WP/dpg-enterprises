@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { MapPin, Phone, Clock, MessageSquare, Send, CheckCircle } from "lucide-react";
+import { MapPin, Phone, Clock, MessageSquare, Send, CheckCircle, AlertCircle } from "lucide-react";
 import SEO from "../components/seo";
 
 type FormState = {
@@ -11,17 +11,46 @@ type FormState = {
   message: string;
 };
 
+type FormErrors = {
+  [key: string]: string;
+};
+
 export default function Contact() {
   const [form, setForm] = useState<FormState>({ name: "", phone: "", email: "", subject: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errors, setErrors] = useState<FormErrors>({});
+
+  const validateForm = (): FormErrors => {
+    const newErrors: FormErrors = {};
+    
+    if (!form.name.trim()) newErrors.name = "Full name is required";
+    if (!form.phone.trim()) newErrors.phone = "Phone number is required";
+    if (form.phone && !/^[\d+\s\-()]+$/.test(form.phone)) newErrors.phone = "Invalid phone number format";
+    if (form.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) newErrors.email = "Invalid email format";
+    if (!form.subject) newErrors.subject = "Please select an inquiry type";
+    if (!form.message.trim()) newErrors.message = "Message is required";
+    
+    return newErrors;
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+    if (errors[name]) {
+      setErrors((prev) => ({ ...prev, [name]: "" }));
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    const newErrors = validateForm();
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
@@ -42,6 +71,7 @@ export default function Contact() {
       const result = await response.json();
       if (result.success) {
         setSubmitted(true);
+        setForm({ name: "", phone: "", email: "", subject: "", message: "" });
       } else {
         alert("Something went wrong. Please try again or contact us via WhatsApp.");
       }
@@ -173,55 +203,73 @@ export default function Contact() {
             ) : (
               <>
                 <h2 className="text-2xl font-black mb-8">Send a Message</h2>
-                <form onSubmit={handleSubmit} data-testid="form-contact" className="space-y-5">
+                <form onSubmit={handleSubmit} data-testid="form-contact" className="space-y-5" noValidate>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
                       <label htmlFor="name" className="block text-xs font-bold text-neutral-500 uppercase tracking-wider mb-2">Full Name *</label>
-                      <input id="name" name="name" value={form.name} onChange={handleChange} required placeholder="Your full name"
+                      <input id="name" name="name" value={form.name} onChange={handleChange}
+                        placeholder="Your full name"
                         data-testid="input-name"
-                        className="w-full bg-white border border-neutral-200 rounded-xl px-4 py-3 text-sm text-neutral-950 placeholder:text-neutral-400 focus:outline-none focus:border-[#1a3a8f] transition-colors"
+                        className={`w-full bg-white border rounded-xl px-4 py-3 text-sm text-neutral-950 placeholder:text-neutral-400 focus:outline-none transition-colors ${
+                          errors.name ? "border-red-400 focus:border-red-500" : "border-neutral-200 focus:border-[#1a3a8f]"
+                        }`}
                       />
+                      {errors.name && <p className="text-red-500 text-xs mt-1 flex items-center gap-1"><AlertCircle className="w-3 h-3" /> {errors.name}</p>}
                     </div>
                     <div>
                       <label htmlFor="phone" className="block text-xs font-bold text-neutral-500 uppercase tracking-wider mb-2">Phone *</label>
-                      <input id="phone" name="phone" value={form.phone} onChange={handleChange} required placeholder="08xxxxxxxxx"
+                      <input id="phone" name="phone" value={form.phone} onChange={handleChange}
+                        placeholder="08xxxxxxxxx or +234..."
                         data-testid="input-phone"
-                        className="w-full bg-white border border-neutral-200 rounded-xl px-4 py-3 text-sm text-neutral-950 placeholder:text-neutral-400 focus:outline-none focus:border-[#1a3a8f] transition-colors"
+                        className={`w-full bg-white border rounded-xl px-4 py-3 text-sm text-neutral-950 placeholder:text-neutral-400 focus:outline-none transition-colors ${
+                          errors.phone ? "border-red-400 focus:border-red-500" : "border-neutral-200 focus:border-[#1a3a8f]"
+                        }`}
                       />
+                      {errors.phone && <p className="text-red-500 text-xs mt-1 flex items-center gap-1"><AlertCircle className="w-3 h-3" /> {errors.phone}</p>}
                     </div>
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-xs font-bold text-neutral-500 uppercase tracking-wider mb-2">Email</label>
-                    <input id="email" name="email" type="email" value={form.email} onChange={handleChange} placeholder="you@example.com"
+                    <label htmlFor="email" className="block text-xs font-bold text-neutral-500 uppercase tracking-wider mb-2">Email (Optional)</label>
+                    <input id="email" name="email" type="email" value={form.email} onChange={handleChange}
+                      placeholder="you@example.com"
                       data-testid="input-email"
-                      className="w-full bg-white border border-neutral-200 rounded-xl px-4 py-3 text-sm text-neutral-950 placeholder:text-neutral-400 focus:outline-none focus:border-[#1a3a8f] transition-colors"
+                      className={`w-full bg-white border rounded-xl px-4 py-3 text-sm text-neutral-950 placeholder:text-neutral-400 focus:outline-none transition-colors ${
+                        errors.email ? "border-red-400 focus:border-red-500" : "border-neutral-200 focus:border-[#1a3a8f]"
+                      }`}
                     />
+                    {errors.email && <p className="text-red-500 text-xs mt-1 flex items-center gap-1"><AlertCircle className="w-3 h-3" /> {errors.email}</p>}
                   </div>
 
                   <div>
                     <label htmlFor="subject" className="block text-xs font-bold text-neutral-500 uppercase tracking-wider mb-2">Inquiry Type *</label>
-                    <select id="subject" name="subject" value={form.subject} onChange={handleChange} required
+                    <select id="subject" name="subject" value={form.subject} onChange={handleChange}
                       data-testid="select-subject"
-                      className="w-full bg-white border border-neutral-200 rounded-xl px-4 py-3 text-sm text-neutral-950 focus:outline-none focus:border-[#1a3a8f] transition-colors"
+                      className={`w-full bg-white border rounded-xl px-4 py-3 text-sm text-neutral-950 focus:outline-none transition-colors ${
+                        errors.subject ? "border-red-400 focus:border-red-500" : "border-neutral-200 focus:border-[#1a3a8f]"
+                      }`}
                     >
                       <option value="" disabled>Select inquiry type</option>
-                      <option value="purchase">Purchase / Price Inquiry</option>
-                      <option value="test-ride">Schedule a Test Ride</option>
-                      <option value="partnership">Distributor / Partnership</option>
-                      <option value="fleet">Fleet / Business Order</option>
-                      <option value="support">After-Sales Support</option>
-                      <option value="other">Other</option>
+                      <option value="purchase">💰 Purchase / Price Inquiry</option>
+                      <option value="test-ride">🏍️ Schedule a Test Ride</option>
+                      <option value="partnership">🤝 Distributor / Partnership</option>
+                      <option value="fleet">📦 Fleet / Business Order</option>
+                      <option value="support">🔧 After-Sales Support</option>
+                      <option value="other">❓ Other Inquiry</option>
                     </select>
+                    {errors.subject && <p className="text-red-500 text-xs mt-1 flex items-center gap-1"><AlertCircle className="w-3 h-3" /> {errors.subject}</p>}
                   </div>
 
                   <div>
                     <label htmlFor="message" className="block text-xs font-bold text-neutral-500 uppercase tracking-wider mb-2">Message *</label>
-                    <textarea id="message" name="message" value={form.message} onChange={handleChange} required rows={5}
+                    <textarea id="message" name="message" value={form.message} onChange={handleChange} rows={5}
                       placeholder="Tell us which model interests you, your location, or anything else we should know."
                       data-testid="textarea-message"
-                      className="w-full bg-white border border-neutral-200 rounded-xl px-4 py-3 text-sm text-neutral-950 placeholder:text-neutral-400 focus:outline-none focus:border-[#1a3a8f] transition-colors resize-none"
+                      className={`w-full bg-white border rounded-xl px-4 py-3 text-sm text-neutral-950 placeholder:text-neutral-400 focus:outline-none transition-colors resize-none ${
+                        errors.message ? "border-red-400 focus:border-red-500" : "border-neutral-200 focus:border-[#1a3a8f]"
+                      }`}
                     />
+                    {errors.message && <p className="text-red-500 text-xs mt-1 flex items-center gap-1"><AlertCircle className="w-3 h-3" /> {errors.message}</p>}
                   </div>
 
                   <button

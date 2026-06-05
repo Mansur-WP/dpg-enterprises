@@ -45,7 +45,7 @@ export function Navbar() {
             data-testid="img-logo"
           />
           <span className={`font-black text-xl tracking-tight transition-colors ${transparent ? "text-white" : "text-neutral-950"}`}>
-            DPG
+            DPG Enterprises
           </span>
         </Link>
 
