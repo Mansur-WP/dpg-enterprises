@@ -160,17 +160,19 @@ export default function Products() {
               </div>
 
               {/* Pricing badge */}
-              <div className="flex items-center gap-3 mb-6 p-4 rounded-2xl bg-[#f0fff4] border border-[#3aaa35]/20">
-                <span className="text-[#3aaa35] text-lg font-black">₦</span>
-                <div>
-                  <div className="font-bold text-neutral-950 text-sm">{p.price.replace('₦', '')}</div>
-                  <div className="text-neutral-400 text-xs mt-0.5">Contact us for exact pricing and availability</div>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-6 p-4 rounded-2xl bg-[#f0fff4] border border-[#3aaa35]/20">
+                <div className="flex items-center gap-3">
+                  <span className="text-[#3aaa35] text-lg font-black">₦</span>
+                  <div>
+                    <div className="font-bold text-neutral-950 text-sm">{p.price.replace('₦', '')}</div>
+                    <div className="text-neutral-400 text-xs mt-0.5">Contact us for exact pricing and availability</div>
+                  </div>
                 </div>
                 <a
                   href={`https://wa.me/2348059434243?text=Hello%20DPG%21%20I%27d%20like%20to%20know%20the%20exact%20price%20of%20the%20${encodeURIComponent(p.name)}.`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="ml-auto shrink-0 text-xs font-bold text-[#3aaa35] underline underline-offset-2 hover:text-[#2d8828] transition-colors"
+                  className="sm:ml-auto shrink-0 text-xs font-bold text-[#3aaa35] underline underline-offset-2 hover:text-[#2d8828] transition-colors"
                 >
                   WhatsApp →
                 </a>

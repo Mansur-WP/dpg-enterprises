@@ -374,8 +374,9 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-black">Petrol vs Electric</h2>
           </div>
 
-          <div className="rounded-3xl overflow-hidden border border-neutral-100 shadow-sm">
-            {/* Header row */}
+          <div className="rounded-3xl border border-neutral-100 shadow-sm overflow-x-auto">
+            <div className="min-w-[600px]">
+              {/* Header row */}
             <div className="grid grid-cols-3 bg-neutral-950 text-white">
               <div className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-neutral-400">Category</div>
               <div className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-neutral-400 border-l border-white/10">
@@ -407,6 +408,7 @@ export default function Home() {
                 </div>
               </motion.div>
             ))}
+            </div>
           </div>
         </div>
       </section>
